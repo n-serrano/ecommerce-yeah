@@ -56,5 +56,5 @@ img {
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    
+    margin: 0 -150px;
 }
