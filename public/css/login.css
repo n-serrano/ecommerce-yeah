@@ -19,22 +19,6 @@ h1 {
     justify-content: center;
 }
 
-input {
-    width: 350px;
-    height: 40px;
-    padding: 15px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .button-enviar {
     border: none;
     background:  #380066;
@@ -53,4 +37,16 @@ li {
 .button-enviar:active {
     background: #6b00c2;
     transform: translateY(3px);
+}
+
+.form-group {
+    margin: 15px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.form {
+    align-items: center;
+    text-align: center;
 }
