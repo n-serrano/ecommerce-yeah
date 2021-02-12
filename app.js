@@ -6,6 +6,7 @@ const session = require('express-session');
 const middlewareUsuarioLogueado = require('./src/middlewares/renderUsuarioLogueado');
 const verSession = require('./src/middlewares/verSession');
 
+let port = process.env.PORT || 3000;
 // Vistas
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
@@ -20,4 +21,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-app.listen(3000, ()=> console.log("servidor corriendo en el puerto 3000"));
+app.listen(port, ()=> console.log(`servidor corriendo en el puerto: ${port}`));
