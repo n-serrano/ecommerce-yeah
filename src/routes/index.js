@@ -1,24 +1,8 @@
 const express = require('express');
+const usersController = require('../controllers/index');
 const router = express.Router();
-const path = require('path');
 
-const userController = require('../controllers/userController');
 
-const multerRegister = require('../middlewares/multerRegister');
+router.get('/', usersController.index);
 
-const registerValidation = require('../validations/registerValidation');
-
-router.get('/', userController.index);
-
-// Rutas del Register 
-router.get('/users/register', userController.register);
-router.post('/users/register', multerRegister.any(), registerValidation, userController.create);
-
-// Rutas del login
-router.get('/users/login', userController.login);
-router.post('/users/login', userController.checkUser);
-
-// Rutas del carrito
-router.get('/products/cart', userController.cart)
-
-module.exports = router
+module.exports = router;
