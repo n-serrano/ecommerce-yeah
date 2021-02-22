@@ -1,6 +1,13 @@
+<<<<<<< HEAD:src/controllers/users.js
 const bcrypt = require('bcrypt');
 const path = require('path');
 const fs = require('fs');
+=======
+const fs = require('fs');
+const path = require('path');
+const bcrypt = require('bcryptjs');
+
+>>>>>>> bf15c8d09b7624dfa2ae662966043d020d17317d:src/controllers/userController.js
 const { validationResult } = require('express-validator')
 
 
