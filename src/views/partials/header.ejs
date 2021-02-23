@@ -1,0 +1,38 @@
+<header>
+    <div class="topnav">
+        <!-- H1 LOGO -->
+        <a href="/" style="text-decoration: none"><h1>Yeah!</h1></a>
+        <!-- BARRA SEARCH -->
+        <div class="search-container">
+          <form action="#">
+            <input
+              class="barra-search"
+              type="text"
+              placeholder="Buscar"
+              name="search"
+            />
+            <button class="lupa" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <!-- LOGIN REGISTER CART -->
+        <div class="log-reg-cart">
+            <% if(typeof usuarioLogeado == "undefined") { %>
+          <a href="/users/login"><button class="login" name="login">Iniciá sesión</button></a>
+          <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
+          <% } else { %>
+          <div class="usLog">
+              <a href="/users/<%= usuarioLogeado.id %>" title="<%= `${usuarioLogeado.username}`%>"><img class="usLog" src="/public/uploads/avatars/<%= usuarioLogeado.avatar %>"></a>
+              <div class="usMenu">
+                <span><%= `${usuarioLogeado.username}` %></span>
+                <button onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
+              </div>
+         </div>
+         <% } %>
+          <a href="/products/cart"><button class="cart" name="cart">
+            <i class="fas fa-shopping-cart"></i>
+          </button></a>
+        </div>
+      </div>
+</header>

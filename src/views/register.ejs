@@ -18,8 +18,12 @@
         
         <form action="" method="post"  class="form" enctype="multipart/form-data">
           <div class="form-group">
+            <label for="exampleInputUsername">Ingresa tu nombre de usuario</label>
+            <input type="text" name="username" class="form-control" id="exampleImputUsername">
+          </div>
+          <div class="form-group">
             <label for="exampleInputEmail1">Ingresá tu correo electrónico</label><br>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><br>
             <small style="color: red">
               <%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %>
             </small>
@@ -30,7 +34,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Ingresá tu contraseña</label><br>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1"><br>
             <small style="color: red">
               <%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %>
             </small>

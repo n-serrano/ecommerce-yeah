@@ -2,20 +2,15 @@
     {},
     {
         "email": "iviote05@gmail.com",
-        "password": "$2b$12$FiQfyDuLnJA57n.uWhIK6.IstFfMsZO0vFJ5MeYcsNMznHcReF.IW",
-        "avatar": "iviote05@gmail.com1613973293110.jpeg"
+        "password": "$2b$12$myT28Ce3L4YAJ3bJLhsDY.7e0LFPPjvFmcM3y3QO/4DwgDZOPNuNS",
+        "avatar": "iviote05@gmail.com1612147859837.jpg"
     },
     {
         "email": "iviote05@gmail.com",
-        "password": "$2b$12$dXUTznlD3Bb7/BllLjBlduxXnl4PnyIbkbOQFIbn2Jx1s1eo1sfHe",
-        "avatar": "iviote05@gmail.com1614012915153.jpeg"
+        "password": "$2b$12$zwy/3Ic9G8quDOwYj.Aqh.mjZ19I8rFFEML3VWVNbmPjzoohfyeyu",
+        "avatar": "iviote05@gmail.com1612147906821.jpg"
     },
     {
-<<<<<<< HEAD
-        "email": "lol@gmail.com",
-        "password": "$2b$12$P8mQV/sWeb.iBzp1w30pXefxMeq0vOccmnaDqwSXl1OWH3Pp7wVFy",
-        "avatar": "lol@gmail.com1614012961129.jpeg"
-=======
         "email": "iviote05@gmail.com",
         "password": "$2b$12$5ohMg.1Qs6OLts0vVPij0.9bLptQ8.Tu50m.sLJGitMT1MCPbHVFu",
         "avatar": "iviote05@gmail.com1612147939382.jpg"
@@ -29,6 +24,22 @@
         "email": "martina.rios.mr@gmail.com",
         "password": "$2b$12$p1ahP/Z/41pcgOJ1.SGc4.mEam8X0V1ZX/NTgPGZM9/sJ2txUgLOG",
         "avatar": "martina.rios.mr@gmail.com1612357597206.jpg"
->>>>>>> bf15c8d09b7624dfa2ae662966043d020d17317d
+    },
+    {
+        "email": "iviote05@gmail.com",
+        "password": "$2a$12$QoZuialYcpQ9UB4oqEPpeu4HrZ3r.pM/6pOlFgaHzgimF2e45kFxi",
+        "avatar": "iviote05@gmail.com1614043897232.jpeg"
+    },
+    {
+        "username": "froogge",
+        "email": "enneas@gmail.com",
+        "password": "$2a$12$xwYwbnF4ZRXH09JhOIOonOl6AVxAlYi2cp5Z/HZbXtQY.wnh8PcMS",
+        "avatar": "enneas@gmail.com1614048021296.jpeg"
+    },
+    {
+        "username": "Cerdo",
+        "email": "ivanverdojak18@gmail.com",
+        "password": "$2a$12$dtwJiVpSto8cI/oS8eaiCukTdHz4CnKrStysUiQ.NHY.63CBgcf6G",
+        "avatar": "ivanverdojak18@gmail.com1614049165732.jpeg"
     }
 ]

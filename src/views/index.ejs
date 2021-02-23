@@ -13,34 +13,9 @@
     <link rel="shortcut icon" href="/images/logo-y-title.png" />
   </head>
   <body>
-    <!-- BANNER -->
-    <div class="topnav">
-      <!-- H1 LOGO -->
-      <a href="/" style="text-decoration: none"><h1>Yeah!</h1></a>
-      <!-- BARRA SEARCH -->
-      <div class="search-container">
-        <form action="#">
-          <input
-            class="barra-search"
-            type="text"
-            placeholder="Buscar"
-            name="search"
-          />
-          <button class="lupa" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
-      <!-- LOGIN REGISTER CART -->
-      <div class="log-reg-cart">
-        
-        <a href="/users/login"><button class="login" name="login">Iniciá sesión</button></a>
-        <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
-        <a href="/products/cart"><button class="cart" name="cart">
-          <i class="fas fa-shopping-cart"></i>
-        </button></a>
-      </div>
-    </div>
+    
+    <%- include('./partials/header') %>
+
     <div class="product-container">
       <!-- ITEM 1 -->
       <div class="product" id="item1">
@@ -141,26 +116,8 @@
         <div class="place">Bs.As G.B.A. Sur</div>
       </div>
     </div>
-      <div class="text-footer">
-        <ul>
-          <li><a href="#">yeah-contact@yeah.com</a></li>
-          <span>|</span>
-          <a href="#"><li>+54 9 11 5612-3524</li></a>
-          <span>|</span>
-          <a href="#"><li>Acerca de</li></a>
-          <span>|</span>
-          <a href="#"><li>Ayuda</li></a>
-          <span>|</span>
-        </ul>
-        <ul>
-          <a href="#"><li>Términos y condiciones</li></a>
-          <span>|</span>
-          <a href="#"><li>Privacidad</li></a>
-          <span>|</span>
-          <a href="#"><li>FAQ</li></a>
-          <span>|</span>
-          <a href="#"><li>Soporte técnico</li></a>
-        </ul>
-      </div>
-  </body>
+
+      <%- include('./partials/footer') %>
+  
+    </body>
 </html>

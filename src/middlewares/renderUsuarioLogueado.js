@@ -1,6 +1,10 @@
-module.exports = function(req, res, next) {
-    if(typeof req.session.usuarioLogueado != 'undefined') {
-        res.locals.usuarioLogueado = req.session.usuarioLogueado
+let fs = require("fs");
+let path = require("path");
+function userMiddleware(req, res, next){
+    if(req.session.usuarioLogeado != undefined){    
+        res.locals.usuarioLogeado = req.session.usuarioLogeado;
     }
-    next()
+    next();
 }
+
+module.exports = userMiddleware;
