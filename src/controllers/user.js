@@ -17,6 +17,16 @@ module.exports = {
     login: function(req, res) {
         res.render('login')
     },
+    logout: function (req, res){
+        if (req.params.id != undefined) {
+          req.session.loggedUser = undefined;
+          res.cookie("recordarme", 0, {maxAge: 0});
+          res.redirect("/");
+        } 
+    },
+    perfil: function(req,res) {
+        res.redirect('perfil')
+    },
     create: function(req, res) {
 
         let errors = validationResult(req);
@@ -42,6 +52,7 @@ module.exports = {
             if(usuarios[i].email == req.body.email) {
                 if(bcrypt.compareSync(req.body.password, usuarios[i].password)) {
                     req.session.usuarioLogeado = {
+                        id: usuarios[i].id,
                         username: usuarios[i].username,
                         avatar: usuarios[i].avatar
                     }

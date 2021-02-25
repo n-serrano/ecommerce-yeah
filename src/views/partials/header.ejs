@@ -23,10 +23,9 @@
           <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
           <% } else { %>
           <div class="usLog">
-              <a href="/users/<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %><img class="usLog" src="/uploads/avatars/<%= usuarioLogeado.avatar %>"></a>
+            <a href="/users/perfil<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %><img class="usLog" src="/uploads/avatars/<%= usuarioLogeado.avatar %>"></a>
               <div class="usMenu">
-                <span><%= `${usuarioLogeado.username}` %></span>
-                <button onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
+                <button type="submit" onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
               </div>
          </div>
          <% } %>

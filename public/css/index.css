@@ -317,3 +317,16 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.usLog {
+    display: flex;
+    position: relative;
+}
+.usLog img {
+    height: 30px;
+    width: 30px;
+}
+
+.log-reg-cart {
+    flex-direction: row;
+}
