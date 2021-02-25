@@ -41,7 +41,7 @@ module.exports = {
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].email == req.body.email) {
                 if(bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                    req.session.usuarioLogueado = {
+                    req.session.usuarioLogeado = {
                         username: usuarios[i].username,
                         avatar: usuarios[i].avatar
                     }
