@@ -19,7 +19,7 @@ module.exports = {
     },
     logout: function (req, res){
         if (req.params.id != undefined) {
-          req.session.loggedUser = undefined;
+          req.session.usuarioLogeado= undefined;
           res.cookie("recordarme", 0, {maxAge: 0});
           res.redirect("/");
         } 
