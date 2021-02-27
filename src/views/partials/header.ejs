@@ -21,9 +21,18 @@
             <% if(typeof usuarioLogeado == "undefined") { %>
           <a href="/users/login"><button class="login" name="login">Iniciá sesión</button></a>
           <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
-          <% } else { %>
+          <% } else  { %>
+            <% if (usuarioLogeado.admin == 1) { %>
+              <span>Mama soy admin</span>
+              <% } %>
           <div class="usLog">
-            <a href="/users/perfil<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %><img class="usLog" src="/uploads/avatars/<%= usuarioLogeado.avatar %>"></a>
+            <a href="/users/perfil<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>
+              <% if( usuarioLogeado.avatar == "") { %>
+                <img class="usLog" src="/uploads/avatars/default.png">
+                <% } else  { %>
+              <img class="usLog" src="/uploads/avatars/<%= usuarioLogeado.avatar %>">
+              <% } %>
+            </a>
               <div class="usMenu">
                 <button type="submit" onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
               </div>

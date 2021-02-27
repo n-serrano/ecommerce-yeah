@@ -28,14 +28,15 @@ module.exports = {
         res.redirect('perfil')
     },
     create: function(req, res) {
-
         let errors = validationResult(req);
         if(errors.isEmpty()) {
+            console.log(req.files)
             usuarios.push({
+                admin:0,
                 username: req.body.username,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 12),
-                avatar: req.files[0].filename
+                avatar: req.files.length > 0 ? req.files[0].filename : ""
             })
             fs.writeFileSync(path.join(__dirname, '../data/usuarios.json'), JSON.stringify(usuarios, null, 4))
             res.redirect('/')
@@ -51,10 +52,15 @@ module.exports = {
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].email == req.body.email) {
                 if(bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                    req.session.usuarioLogeado = {
+                    let usuarioLogeado = {
                         id: usuarios[i].id,
+                        admin: usuarios[i].admin,
                         username: usuarios[i].username,
                         avatar: usuarios[i].avatar
+                    }
+                    req.session.usuarioLogeado = usuarioLogeado;
+                    if(req.body.remember != undefined){ 
+                        res.cookie("recordarme", usuarioLogeado.id, { maxAge: 864000});
                     }
                     return res.redirect('/')
                 } else {
