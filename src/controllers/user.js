@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
+// const db = require("../../database/models/Index")
 
 const { validationResult } = require('express-validator')
 
@@ -19,8 +20,8 @@ module.exports = {
     },
     logout: function (req, res){
         if (req.params.id != undefined) {
-          req.session.usuarioLogeado= undefined;
-          res.cookie("recordarme", 0, {maxAge: 0});
+          req.session.usuarioLogeado = undefined;
+          res.cookie("recordarme", 0, {maxAge: 3800});
           res.redirect("/");
         } 
     },
