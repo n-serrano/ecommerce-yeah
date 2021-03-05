@@ -29,7 +29,7 @@ module.exports = function (sequelize, dataTypes) {
 
     const Status = sequelize.define(alias, cols, config)
     Status.associate = (models)=>{
-        Status.hasMany(models.status,
+        Status.belongsTo(models.status,
             {
                 as: "Cart",        
                 foreignKey: "id_cart"   

@@ -221,78 +221,6 @@ button {
     color: grey;
 }
 
-.lancha {
-    height: 60%;
-    width: 100%;
-    position: relative;
-    background-image: url('https://http2.mlstatic.com/quicksilver-2700-c-volvo-300-hp-day-cruiser-D_NQ_NP_721771-MLA26444782475_112017-F.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 4px 4px 0px 0px;
-    /* border: 1px solid blue; */
-}
-
-.motocross {
-    height: 60%;
-    width: 100%;
-    position: relative;
-    background-image: url('https://http2.mlstatic.com/D_NQ_NP_852208-MLA44105615179_112020-W.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 4px 4px 0px 0px;
-    /* border: 1px solid blue; */
-}
-
-.cuatri {
-    height: 60%;
-    width: 100%;
-    position: relative;
-    background-image: url('https://http2.mlstatic.com/D_NQ_NP_764075-MLA44262133635_122020-W.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 4px 4px 0px 0px;
-    /* border: 1px solid blue; */
-}
-
-.depto {
-    height: 60%;
-    width: 100%;
-    position: relative;
-    background-image: url('https://http2.mlstatic.com/D_NQ_NP_635079-MLA29116973846_012019-W.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 4px 4px 0px 0px;
-    /* border: 1px solid blue; */
-}
-
-.utv {
-    height: 60%;
-    width: 100%;
-    position: relative;
-    background-image: url('https://http2.mlstatic.com/D_NQ_NP_858097-MLA43270204739_082020-W.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 4px 4px 0px 0px;
-    /* border: 1px solid blue; */
-}
-
-.fulbito {
-    height: 60%;
-    width: 100%;
-    position: relative;
-    background-image: url('https://http2.mlstatic.com/D_NQ_NP_717068-MLA44332367067_122020-V.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 4px 4px 0px 0px;
-    /* border: 1px solid blue; */
-}
-
 .text-footer {
     height: 136px;
     width: 100%;
@@ -317,7 +245,7 @@ a {
     text-decoration: none;
     color: white;
 }
-
+ /* header usuario logeado */
 .usLog {
     display: flex;
     position: relative;
@@ -329,4 +257,14 @@ a {
 
 .log-reg-cart {
     flex-direction: row;
+}
+.form {
+    display: flex;
+    background-color: white;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+}
+.title {
+    align-items: center;
 }

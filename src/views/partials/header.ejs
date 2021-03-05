@@ -1,46 +1,46 @@
 <header>
-    <div class="topnav">
-        <!-- H1 LOGO -->
-        <a href="/" style="text-decoration: none"><h1>Yeah!</h1></a>
-        <!-- BARRA SEARCH -->
-        <div class="search-container">
-          <form action="#">
-            <input
-              class="barra-search"
-              type="text"
-              placeholder="Buscar"
-              name="search"
-            />
-            <button class="lupa" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-        </div>
-        <!-- LOGIN REGISTER CART -->
-        <div class="log-reg-cart">
-            <% if(typeof usuarioLogeado == "undefined") { %>
-          <a href="/users/login"><button class="login" name="login">Iniciá sesión</button></a>
-          <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
-          <% } else  { %>
-            <% if (usuarioLogeado.admin == 1) { %>
-              <span>Mama soy admin</span>
-              <% } %>
-          <div class="usLog">
-            <a href="/users/perfil<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>
-              <% if( usuarioLogeado.avatar == "") { %>
-                <img class="usLog" src="/uploads/avatars/default.png">
-                <% } else  { %>
-              <img class="usLog" src="/uploads/avatars/<%= usuarioLogeado.avatar %>">
-              <% } %>
-            </a>
-              <div class="usMenu">
-                <button type="submit" onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
-              </div>
-         </div>
-         <% } %>
-          <a href="/products/cart"><button class="cart" name="cart">
-            <i class="fas fa-shopping-cart"></i>
-          </button></a>
-        </div>
+  <div class="topnav">
+      <!-- H1 LOGO -->
+      <a href="/" style="text-decoration: none"><h1>Yeah!</h1></a>
+      <!-- BARRA SEARCH -->
+      <div class="search-container">
+        <form action="#">
+          <input
+            class="barra-search"
+            type="text"
+            placeholder="Buscar"
+            name="search"
+          />
+          <button class="lupa" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
       </div>
+      <!-- LOGIN REGISTER CART -->
+      <div class="log-reg-cart">
+          <% if(typeof usuarioLogeado == "undefined") { %>
+        <a href="/users/login"><button class="login" name="login">Iniciá sesión</button></a>
+        <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
+        <% } else  { %>
+          <% if (usuarioLogeado.admin == 1) { %>
+            <a href="/users/admin"><span>Mama soy admin</span></a>
+            <% } %>
+        <div class="usLog">
+          <a href="/users/perfil<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>
+            <% if( usuarioLogeado.avatar == "") { %>
+              <img class="usLog" src="/uploads/avatars/default.png">
+              <% } else  { %>
+            <img class="usLog" src="/uploads/avatars/<%= usuarioLogeado.avatar %>">
+            <% } %>
+          </a>
+            <div class="usMenu">
+              <button type="submit" onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
+            </div>
+       </div>
+       <% } %>
+        <a href="/products/cart"><button class="cart" name="cart">
+          <i class="fas fa-shopping-cart"></i>
+        </button></a>
+      </div>
+    </div>
 </header>
