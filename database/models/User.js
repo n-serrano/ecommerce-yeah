@@ -28,7 +28,6 @@ module.exports = function (sequelize, dataTypes) {
         },
         id_cart: {
             type: dataTypes.INTEGER,
-            primaryKey: true
         }
 
     }
@@ -42,10 +41,10 @@ module.exports = function (sequelize, dataTypes) {
 
     const User = sequelize.define(alias, cols, config)
     User.associate = (models)=>{
-        User.hasMany(models.cart,
+        User.hasMany(models.Cart,
             {
-                as: "Cart",        
-                foreignKey: "id_cart"   
+                as: "cart",        
+                foreignKey: "id_user"   
             })
     }
     return User;

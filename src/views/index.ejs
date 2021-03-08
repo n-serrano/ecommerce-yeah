@@ -18,10 +18,17 @@
     <%- include('./partials/header') %>
 
     <div class="product-container">
-      <!-- ITEM 1 -->
+      <% if(typeof product == "undefined") { %>
+        <h2>No hay productos cargados aun</h2>
+        <%} else  { %> 
+      <%for (let i = 0; i < product.length; i++) { %>
       <div class="product" id="item1">
-        
+        <img src="/uploads/products/<%= product[i].imgpath %>" alt="">
+        <h2><%= product[i].name %></h2>
+        <p><%= product[i].description %></p>
       </div>
+      <%}%>
+    <%}%>
      
     </div>
 

@@ -1,4 +1,4 @@
-// const db = require("../../database/models/Index")
+const db = require("../../database/models/Index")
 
 module.exports = {
 

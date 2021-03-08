@@ -6,6 +6,9 @@ module.exports = function (sequelize, dataTypes) {
             autoIncrement: true,
             primaryKey: true
         },
+        imgpath: {
+            type: dataTypes.STRING(1000),
+        },
         name: {
             type: dataTypes.STRING(50),
             NotNull: true
@@ -18,13 +21,8 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER,
             NotNull: true
         },
-        id_image: {
-            type: dataTypes.INTEGER,
-            primaryKey: true
-        },
         id_status: {
             type: dataTypes.INTEGER,
-            primaryKey: true
         }
 
     }
@@ -38,14 +36,14 @@ module.exports = function (sequelize, dataTypes) {
 
     const Product = sequelize.define(alias, cols, config)
     Product.associate = (models)=>{
-        Product.hasMany(models.image,
+        // Product.hasMany(models.Image,
+        //     {
+        //         as: "image",        
+        //         foreignKey: "id_product"   
+        //     }),
+        Product.belongsTo(models.Status,
             {
-                as: "Image",        
-                foreignKey: "id_image"   
-            }),
-        Product.hasMany(models.status,
-            {
-                as: "Status",        
+                as: "status",        
                 foreignKey: "id_status"   
             })
     }

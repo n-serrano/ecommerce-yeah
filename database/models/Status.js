@@ -6,16 +6,8 @@ module.exports = function (sequelize, dataTypes) {
             autoIncrement: true,
             primaryKey: true
         },
-        in_stock: {
-            type: dataTypes.INTEGER,
-            NotNull: true
-        },
-        in_cart: {
-            type: dataTypes.INTEGER,
-            NotNull: true
-        },
-        bought: {
-            type: dataTypes.INTEGER,
+        status: {
+            type: dataTypes.STRING(20),
             NotNull: true
         }
     }
@@ -29,14 +21,14 @@ module.exports = function (sequelize, dataTypes) {
 
     const Status = sequelize.define(alias, cols, config)
     Status.associate = (models)=>{
-        Status.belongsTo(models.status,
+        Status.belongsTo(models.Cart,
             {
-                as: "Cart",        
+                as: "cart",        
                 foreignKey: "id_cart"   
             }),
-        Status.hasMany(models.product,
+        Status.hasMany(models.Product,
             {
-                as: "Product",        
+                as: "product",        
                 foreignKey: "id_product"   
             })
         }

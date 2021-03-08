@@ -17,17 +17,18 @@
   <div class="container">
     <h1>Crea tu Producto</h1>
 
-    <form action="" method="post"  class="form" enctype="multipart/form-data">
+    <form action="/create" method="POST"  class="form" enctype="multipart/form-data">
       <div class="group-form">
         <label for="title">Ingresa el nombre del producto</label><br>
-        <input type="text" name="title" class="form-control" id="title">
+        <input type="text" name="name" class="form-control" id="nameProduct">
       </div>
       <div class="group-form">
         <label for="description">Danos una descripcion breve de tu producto</label><br>
-        <textarea rows="8" cols="60" name="description" class="form-control" id="description"></textarea><br>
+        <textarea rows="8" cols="60" name="description" class="form-control" id="descriptionProduct"></textarea><br>
       </div>
       <div class="group-form">
-        <label for="exampleFormControlFile1">Subí unas imagenes de tu producto para que los demas usuarios puedan verlo !!</label><br><br>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="avatar"><br>
+        <label for="exampleFormControlFile1">Subí una imagene de tu producto para que los demas usuarios puedan verlo !!</label><br><br>
+        <input type="file" class="form-control-file" id="image" name="imgpath"><br>
       </div>
       <button type="submit" class="button-enviar">Confirmar</button>
+    </form>

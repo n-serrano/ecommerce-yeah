@@ -20,15 +20,12 @@ module.exports = function (sequelize, dataTypes) {
         },
         id_status: {
             type: dataTypes.INTEGER,
-            primaryKey: true
         },
         id_product: {
             type: dataTypes.INTEGER,
-            primaryKey: true
         },
         id_user: {
             type: dataTypes.INTEGER,
-            primaryKey: true
         }
         
     }
@@ -42,19 +39,14 @@ module.exports = function (sequelize, dataTypes) {
 
     const Cart = sequelize.define(alias, cols, config)
     Cart.associate = (models)=>{
-        Cart.belongsTo(models.status,
+        Cart.belongsTo(models.Product,
             {
-                as: "Status",        
-                foreignKey: "id_status"   
-            }),
-        Cart.belongsTo(models.product,
-            {
-                as: "Product",        
+                as: "product",        
                 foreignKey: "id_product"   
             }),
-        Cart.hasMany(models.user,
+        Cart.belongsTo(models.User,
             {
-                 as: "User",        
+                 as: "user",        
                 foreignKey: "id_user"   
             })
     }
