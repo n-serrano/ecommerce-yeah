@@ -268,3 +268,55 @@ a {
 .title {
     align-items: center;
 }
+
+/* ======= USUARIO HEADER ========= */
+
+.usLog {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+.usMenu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin: 0px 10px;
+    margin-top: 0px;
+}
+
+
+#usLogImg {
+    border-radius: 50%;
+}
+
+#closeSessionButton {
+    border: none;
+    background-color: #380066;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    width: 120px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#closeSessionButton:hover {
+    background: #45017c;
+    transform: translateY(-1px);
+    box-shadow: 0px 2px 3px -2px;
+}
+
+#closeSessionButton:active {
+    background: #6b00c2;
+    transform: translateY(3px);
+}
+
+footer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-top: 100%;
+}

@@ -26,15 +26,15 @@
             <a href="/users/admin"><span>Mama soy admin</span></a>
             <% } %>
         <div class="usLog">
-          <a href="/users/perfil<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>
+          <a id="usLogName" href="/users/perfil<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>
             <% if( usuarioLogeado.avatar == "") { %>
-              <img class="usLog" src="/uploads/avatars/default.png">
+              <img class="usLog" id="usLogImg" src="/uploads/avatars/default.png">
               <% } else  { %>
-            <img class="usLog" src="/uploads/avatars/<%= usuarioLogeado.avatar %>">
+            <img class="usLog" id="usLogImg" src="/uploads/avatars/<%= usuarioLogeado.avatar %>"">
             <% } %>
           </a>
             <div class="usMenu">
-              <button type="submit" onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
+              <button type="submit" id="closeSessionButton" onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
             </div>
        </div>
        <% } %>
