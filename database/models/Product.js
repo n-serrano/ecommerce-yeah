@@ -17,6 +17,10 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING(1000),
             NotNull: true
         },
+        price: {
+            type: dataTypes.INTEGER,
+            NotNull: true
+        },
         stock: {
             type: dataTypes.INTEGER,
             NotNull: true

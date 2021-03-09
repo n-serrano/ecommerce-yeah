@@ -14,6 +14,6 @@ router.post('/users/register', multerRegister.any(), registerValidation, userCon
 router.get('/users/login', userController.login);
 router.post('/users/login', userController.checkUser);
 router.get('/:id', userController.logout);
-router.get('/users/perfil', userController.perfil);
+router.get('/users/perfil/<%= usuarioLogeado.id %>', userController.perfil);
 
 module.exports = router

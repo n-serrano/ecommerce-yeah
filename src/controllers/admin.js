@@ -10,6 +10,8 @@ module.exports = {
             imgpath: req.files[0].filename,
             name: req.body.name,
             description: req.body.description,
+            price: req.body.price,
+            stock: req.body.stock,
             id_status: 1
         })
         .then( function () {

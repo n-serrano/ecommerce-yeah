@@ -29,7 +29,7 @@ module.exports = function (sequelize, dataTypes) {
         Status.hasMany(models.Product,
             {
                 as: "product",        
-                foreignKey: "id_product"   
+                foreignKey: "id_status"   
             })
         }
     return Status;

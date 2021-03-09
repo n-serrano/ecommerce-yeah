@@ -6,6 +6,5 @@ module.exports = {
         .then(function(product){
      return res.render('index', {product})
         })
-        res.render("../views/index")
     }
 }

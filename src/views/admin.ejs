@@ -19,16 +19,24 @@
 
     <form action="/create" method="POST"  class="form" enctype="multipart/form-data">
       <div class="group-form">
-        <label for="title">Ingresa el nombre del producto</label><br>
-        <input type="text" name="name" class="form-control" id="nameProduct">
+        <label for="name">Ingresa el nombre del producto</label><br>
+        <input type="text" name="name" class="form-control" id="nameProduct" placeholder="Ingresa el nombre del producto">
       </div>
       <div class="group-form">
         <label for="description">Danos una descripcion breve de tu producto</label><br>
-        <textarea rows="8" cols="60" name="description" class="form-control" id="descriptionProduct"></textarea><br>
+        <textarea rows="8" cols="60" name="description" class="form-control" id="descriptionProduct" placeholder="Escribi una breve descripcion de tu producto...."></textarea><br>
       </div>
       <div class="group-form">
-        <label for="exampleFormControlFile1">Subí una imagene de tu producto para que los demas usuarios puedan verlo !!</label><br><br>
+        <label for="exampleFormControlFile1">Subí una imagen de tu producto para que los demás usuarios puedan verlo !!</label><br><br>
         <input type="file" class="form-control-file" id="image" name="imgpath"><br>
+      </div>
+      <div class="group-form">
+        <label for="price">Precio del producto</label><br>
+        <input type="number" class="form-control" name="price" id="priceProduct" placeholder="$...">
+      </div>
+      <div class="group-form">
+        <label for="stock">Stock del producto</label><br>
+        <input type="number" class="form-control" name="stock" id="stockProduct" placeholder="...">
       </div>
       <button type="submit" class="button-enviar">Confirmar</button>
     </form>
