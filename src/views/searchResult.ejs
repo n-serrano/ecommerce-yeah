@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script
+          src="https://kit.fontawesome.com/712575d4a5.js"
+          crossorigin="anonymous"
+        ></script>
+        <title>Yeah!</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/stylex.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="shortcut icon" href="/images/logo-y-title.png" />
+        <script src="../scripts/global.js"></script>
+      </head>
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <h1 class="title">Estos son los resultados de la búsqueda</h1>
+        
+        <div class="product-container">
+            <section class="product"> 
+        <% if (listado.length != 0) { %>
+            <% for( let i = 0; i < listado.length; i++ ) { %>
+                    <a href="/detail/<%= listado[i].id %>" class="card">
+                        <img src="/uploads/products/<%= listado[i].imgpath %>" alt="">
+                        <h2><%= listado[i].name %></h2>
+                        <h3>$ <%= listado[i].price %></h3>
+                        <p><%= listado[i].description %></p>
+                    </a>
+                <% } %>
+            <% } else { %>
+                <h2>No encontramos productos para esta búsqueda</h2>
+            <% } %>
+
+        </section>
+    </div>
+    </main>
+    <%- include('partials/footer') %> 
+</body>
+</html>

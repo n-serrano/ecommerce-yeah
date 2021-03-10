@@ -9,6 +9,6 @@ router.get('/products/cart', productsController.cart)
 
 router.get('/detail/:id', productsController.detail);
 
-// router.get('/search', productsController.search);
+router.get('/search', productsController.search);
 
 module.exports = router

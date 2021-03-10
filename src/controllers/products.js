@@ -15,16 +15,21 @@ module.exports = {
             })
         })
     },
-    // search: function (req, res) {
-    //     db.Product.findAll({
-    //         where: {
-    //             nombre: { [db.Sequelize.Op.like]: "%" + req.query.search + "%" }
-    //         }.then(function (listado) {
-    //             if (listado.lenght != 0)
-    //                 return res.send(listado)
-    //         })
-    //     })
-    // },
+    search: function(req, res) {
+        db.Product.findAll({
+            where: {
+                name: {
+                    [db.Sequelize.Op.like]: '%' + req.query.search + '%',
+                }
+            }
+        })
+        .then(function(listado) {
+            return res.render('searchResult', {
+                listado: listado,
+                laQuery: req.query.search
+            })
+        })
+    },
      cart: function(req, res) {
         res.render('cart')
     }
