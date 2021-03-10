@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script>
-      src="https://kit.fontawesome.com/712575d4a5.js"
-      crossorigin="anonymous"
-    </script>
-    <title>Yeah!</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/stylex.css" />
-    <link rel="shortcut icon" href="/images/logo-y-title.png" />
-    <link rel="stylesheet" href="/css/admin.css">
-  </head>
+<head>
+  <script>
+    src="https://kit.fontawesome.com/712575d4a5.js"
+    crossorigin="anonymous"
+  </script>
+  <title>Yeah!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/stylex.css" />
+  <link rel="shortcut icon" href="/images/logo-y-title.png" />
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
   <body>
   <%- include('./partials/header') %>
   <div class="container">
-    <h1>Crea tu Producto</h1>
+    <h1>Edita tu Producto</h1>
 
-    <form action="/create" method="POST"  class="form" enctype="multipart/form-data">
+    <form action="?_method=PUT" method="POST"  class="form" enctype="multipart/form-data">
       <div class="group-form">
         <label for="name">Ingresa el nombre del producto</label><br>
         <input type="text" name="name" class="form-control" id="nameProduct" placeholder="Ingresa el nombre del producto">

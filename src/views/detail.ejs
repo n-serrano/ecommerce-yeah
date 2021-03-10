@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script
+        src="https://kit.fontawesome.com/712575d4a5.js"
+        crossorigin="anonymous"
+        ></script>
+        <title>Yeah!</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/stylex.css" />
+        <link rel="stylesheet" href="/css/detail.css" />
+        <link rel="shortcut icon" href="/images/logo-y-title.png" />
+      </head>
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <section class="productDetail">
+            <h1><%= product.name %></h1>
+            <img src="/uploads/products/<%= product.imgpath %>" ><br><br>
+            <ul>
+                <li>Precio: $<%= product.price %></li>
+                <li>Descripcion: <%= product.description %></li>
+                <li>Stock: <%= product.stock %></li>
+            </ul>
+            <div class="controls">
+                <% if(typeof usuarioLogeado == "undefined") { %>
+                    <% } else  { %>
+                <% if (usuarioLogeado.admin == 1) { %>
+                <a style="cursor:pointer" href="/edit/<%= product.id %>"><button>Editar</button></a>
+                <form action="/delete/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="submit">Borrar</button>
+                    <% } %>
+                <% } %>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%- include('partials/footer') %> 
+</body>
+</html>

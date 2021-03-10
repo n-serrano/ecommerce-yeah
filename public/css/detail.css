@@ -321,11 +321,54 @@ footer {
     margin-top: 100%;
 }
 
-.product img {
-    height: 150px;
-    width: 250px;
-    object-fit: cover;
+section.productDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center    
 }
-.product a {
+section.productDetail .rating {
+    display: flex;
+    align-items: center;
+}
+section.productDetail .rating > * {
+    width: 16px!important;
+    height: 16px!important;
+    fill: orange;
+    stroke: orange;
+    margin-right: 5px
+}
+section.productDetail h1 {
+    font-size: 72px;
+    margin-bottom: 10px;
+}
+section.productDetail ul {
+    text-align: center
+}
+
+section.productDetail .controls {
+    display: flex;
+    margin-top: 20px;
+}
+
+section.productDetail .controls button {
+    padding: 8px 16px;
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 3px
+}
+
+section.productDetail .controls button + form {
+    margin-left: 10px;
+}
+
+section.productDetail .controls form {
+    display: flex;
+}
+
+section.productDetail .controls form > button {
+    background: red
+}
+.productDetail h1 {
     color: black;
 }

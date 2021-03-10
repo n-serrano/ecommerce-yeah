@@ -22,11 +22,13 @@
         <h2>No hay productos cargados aun</h2>
         <%} else  { %> 
       <%for (let i = 0; i < product.length; i++) { %>
-      <div class="product" id="item1">
-        <img src="/uploads/products/<%= product[i].imgpath %>" alt="">
+        <div class="product" id="item1">
+          <a href="/detail/<%= product[i].id %>" class="card">
+          <img src="/uploads/products/<%= product[i].imgpath %>" alt="">
         <h2><%= product[i].name %></h2>
         <h3>$ <%= product[i].price %></h3>
         <p><%= product[i].description %></p>
+      </a>
       </div>
       <%}%>
     <%}%>

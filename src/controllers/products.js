@@ -7,12 +7,14 @@ module.exports = {
     //         return res.render('/', { product })
     //     })
     // },
-    // showDetails: function (req, res) {
-    //     db.Product.findByPk(req.params.id)
-    //         .then(function (producto) {
-    //             res.render("/detail/:id", { producto })
-    //         })
-    // },
+    detail: function(req, res) {
+        db.Product.findByPk(req.params.id)
+        .then(function(product) {
+            return res.render('detail', {
+                product: product
+            })
+        })
+    },
     // search: function (req, res) {
     //     db.Product.findAll({
     //         where: {
