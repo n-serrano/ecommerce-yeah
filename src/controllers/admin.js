@@ -37,21 +37,30 @@ module.exports = {
         })
     },
     update: function(req,res){
-        db.Product.update({
-            imgpath: req.files[0].filename,
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            stock: req.body.stock,
-        }, {
+        db.Product.findOne({
             where: {
-                id: req.params.id
+                id: req.params.id,
             }
         })
-        .then(function() {
-            res.redirect('/')
-        }).catch(function(e){
-            res.send(e)
+        .then(function (producto) {
+            let foto = producto.imgpath
+            db.Product.update({
+                imgpath: req.files.length > 0 ? req.files[0].filename : foto,
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                stock: req.body.stock,
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(function() {
+                res.redirect('/')
+            }).catch(function(e){
+                res.send(e)
+            })
         })
+        
     },
 }

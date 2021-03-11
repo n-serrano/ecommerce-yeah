@@ -12,8 +12,11 @@ router.post('/users/register', multerRegister.any(), registerValidation, userCon
 
 // Rutas del login
 router.get('/users/login', userController.login);
+
 router.post('/users/login', userController.checkUser);
+
 router.get('/:id', userController.logout);
-router.get('/users/perfil/<%= usuarioLogeado.id %>', userController.perfil);
+
+router.get('/users/perfil/:id', userController.perfil);
 
 module.exports = router

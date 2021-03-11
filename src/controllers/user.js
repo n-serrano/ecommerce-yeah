@@ -3,7 +3,8 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 // const db = require("../../database/models/Index")
 
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
+const db = require('../../database/models/Index');
 
 let usuarios = fs.readFileSync(path.join(__dirname, '../data/usuarios.json'), 'utf8');
 usuarios = JSON.parse(usuarios);
@@ -26,21 +27,23 @@ module.exports = {
         } 
     },
     perfil: function(req,res) {
-        res.redirect('perfil')
+        res.render('perfil')
     },
     create: function(req, res) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-            console.log(req.files)
-            usuarios.push({
+            db.User.create({
                 admin:0,
                 username: req.body.username,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 12),
                 avatar: req.files.length > 0 ? req.files[0].filename : ""
             })
-            fs.writeFileSync(path.join(__dirname, '../data/usuarios.json'), JSON.stringify(usuarios, null, 4))
-            res.redirect('/')
+            .then(function (){
+                res.redirect('/')
+            })
+            // fs.writeFileSync(path.join(__dirname, '../data/usuarios.json'), JSON.stringify(usuarios, null, 4))
+            // res.redirect('/')
         } else {
             res.render('register', {
                 errors: errors.mapped()
@@ -50,25 +53,29 @@ module.exports = {
 
     },
     checkUser: function(req, res) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].email == req.body.email) {
-                if(bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                    let usuarioLogeado = {
-                        id: usuarios[i].id,
-                        admin: usuarios[i].admin,
-                        username: usuarios[i].username,
-                        avatar: usuarios[i].avatar
-                    }
-                    req.session.usuarioLogeado = usuarioLogeado;
-                    if(req.body.remember != undefined){ 
-                        res.cookie("recordarme", usuarioLogeado.id, { maxAge: 864000});
-                    }
-                    return res.redirect('/')
-                } else {
-                    return res.send('Los datos ingresados no coinciden. Seguí participando.')
-                }
+        db.User.findOne({
+            where : {
+                email:req.body.email,
             }
-        }
-        return res.send("El usuario no existe, por favor registrate....")
-    }
+        })
+        .then(function (usuarios) {
+            if (usuarios && bcrypt.compareSync(req.body.password, usuarios.password)) {
+                let usuarioLogeado = {
+                    id: usuarios.id,
+                    admin: usuarios.admin,
+                    username: usuarios.username,
+                    avatar: usuarios.avatar
+                }
+                req.session.usuarioLogeado = usuarioLogeado;
+            if(req.body.remember != undefined){ 
+                res.cookie("recordarme", usuarioLogeado.id, { maxAge: 864000});
+            }
+            return res.redirect('/')
+        
+            }
+            
+            
+    })
+    },
+    
 }

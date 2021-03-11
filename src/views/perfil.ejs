@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <script
+          src="https://kit.fontawesome.com/712575d4a5.js"
+          crossorigin="anonymous"
+        ></script>
+        <title>Yeah!</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/stylex.css" />
+        <link rel="stylesheet" href="/css/detail.css" />
+        <link rel="shortcut icon" href="/images/logo-y-title.png" />
+        <script src="../scripts/global.js"></script>
+      </head>
 <body>
     <%- include('./partials/header') %>
     
     <h1>bienvenidx a tu Perfil</h1>
 
+    <section class="productDetail">
+        <% if(typeof user == "undefined") { %>
+            <h2>No hay productos cargados aun</h2>
+            <%} else  { %> 
+        <%for (let i = 0; i < user.length; i++) { %>
+        <h1><%= user.name %></h1>
+        <img src="/uploads/avatars/<%= user.imgpath %>" ><br><br>
+        <ul>
+            <li>Nombre de Usuario: $<%= user.username %></li>
+            <li>Email: <%= user.email %></li>
+        </ul>
+        <div class="controls">
+            <a style="cursor:pointer" href="/edit/<%= product.id %>"><button>Editar</button></a>
+        </div>
+        <%}%>
+    <%}%>
     
 </body>
 </html>

@@ -26,9 +26,9 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING(1000),
             NotNull: true
         },
-        id_cart: {
-            type: dataTypes.INTEGER,
-        }
+        // id_cart: {
+        //     type: dataTypes.INTEGER,
+        // }
 
     }
 
@@ -40,12 +40,12 @@ module.exports = function (sequelize, dataTypes) {
     }
 
     const User = sequelize.define(alias, cols, config)
-    User.associate = (models)=>{
-        User.hasMany(models.Cart,
-            {
-                as: "cart",        
-                foreignKey: "id_user"   
-            })
-    }
+    // User.associate = (models)=>{
+    //     User.hasMany(models.Cart,
+    //         {
+    //             as: "cart",        
+    //             foreignKey: "id_user"   
+    //         })
+    // }
     return User;
 }

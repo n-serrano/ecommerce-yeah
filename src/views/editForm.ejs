@@ -20,11 +20,11 @@
     <form action="?_method=PUT" method="POST"  class="form" enctype="multipart/form-data">
       <div class="group-form">
         <label for="name">Ingresa el nombre del producto</label><br>
-        <input type="text" name="name" class="form-control" id="nameProduct" placeholder="Ingresa el nombre del producto">
+        <input type="text" name="name" class="form-control" id="nameProduct" placeholder="Ingresa el nombre del producto" value="<%= product.name %>">
       </div>
       <div class="group-form">
         <label for="description">Danos una descripcion breve de tu producto</label><br>
-        <textarea rows="8" cols="60" name="description" class="form-control" id="descriptionProduct" placeholder="Escribi una breve descripcion de tu producto...."></textarea><br>
+        <textarea rows="8" cols="60" name="description" class="form-control" id="descriptionProduct" placeholder="Escribi una breve descripcion de tu producto...."><%= product.description %></textarea><br>
       </div>
       <div class="group-form">
         <label for="exampleFormControlFile1">Subí una imagen de tu producto para que los demás usuarios puedan verlo !!</label><br><br>
@@ -32,11 +32,11 @@
       </div>
       <div class="group-form">
         <label for="price">Precio del producto</label><br>
-        <input type="number" class="form-control" name="price" id="priceProduct" placeholder="$...">
+        <input type="number" class="form-control" name="price" id="priceProduct" placeholder="$..." value="<%= product.price %>">
       </div>
       <div class="group-form">
         <label for="stock">Stock del producto</label><br>
-        <input type="number" class="form-control" name="stock" id="stockProduct" placeholder="...">
+        <input type="number" class="form-control" name="stock" id="stockProduct" placeholder="..." value="<%= product.stock %>">
       </div>
       <button type="submit" class="button-enviar">Confirmar</button>
     </form>
