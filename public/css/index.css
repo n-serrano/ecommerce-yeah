@@ -326,9 +326,12 @@ footer {
     width: 250px;
     object-fit: cover;
 }
-.product a {
-    color: black;
+.product a h2 {
+    color:  #45017c;
 }
 .title  {
+    color: black;
+}
+.product a {
     color: black;
 }

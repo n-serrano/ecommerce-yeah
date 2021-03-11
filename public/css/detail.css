@@ -326,17 +326,7 @@ section.productDetail {
     flex-direction: column;
     align-items: center    
 }
-section.productDetail .rating {
-    display: flex;
-    align-items: center;
-}
-section.productDetail .rating > * {
-    width: 16px!important;
-    height: 16px!important;
-    fill: orange;
-    stroke: orange;
-    margin-right: 5px
-}
+
 section.productDetail h1 {
     font-size: 72px;
     margin-bottom: 10px;
@@ -371,4 +361,7 @@ section.productDetail .controls form > button {
 }
 .productDetail h1 {
     color: black;
+}
+.productDetail ul li {
+    display: inherit;
 }
