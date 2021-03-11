@@ -64,6 +64,7 @@ module.exports = {
                     id: usuarios.id,
                     admin: usuarios.admin,
                     username: usuarios.username,
+                    email: usuarios.email,
                     avatar: usuarios.avatar
                 }
                 req.session.usuarioLogeado = usuarioLogeado;
