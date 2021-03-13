@@ -26,7 +26,8 @@
           <a href="/detail/<%= product[i].id %>" class="card">
           <img src="/uploads/products/<%= product[i].imgpath %>" alt="">
         <h2><%= product[i].name %></h2>
-        <h3>$ <%= product[i].price %></h3>
+        <h3>$ <%= new Intl.NumberFormat().format(product[i].price) %></h3>
+        
         <p><%= product[i].description %></p>
       </a>
       </div>
