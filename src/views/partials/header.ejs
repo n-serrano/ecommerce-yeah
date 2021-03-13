@@ -23,7 +23,7 @@
         <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
         <% } else  { %>
           <% if (usuarioLogeado.admin == 1) { %>
-            <a href="/users/admin"><span>Mama soy admin</span></a>
+            <a href="/users/admin"><span>Crear Producto</span></a>
             <% } %>
         <div class="usLog">
           <a id="usLogName" href="/users/perfil/<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>

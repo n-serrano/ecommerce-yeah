@@ -19,4 +19,8 @@ router.get('/:id', userController.logout);
 
 router.get('/users/perfil/:id', userController.perfil);
 
+// router.get('/edit/:id', userController.edit)
+
+// router.post('/edit/:id', multerRegister.any(), userController.update)
+
 module.exports = router

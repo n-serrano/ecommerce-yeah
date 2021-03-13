@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    src="https://kit.fontawesome.com/712575d4a5.js"
+    crossorigin="anonymous"
+  </script>
+  <title>Yeah!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/stylex.css" />
+  <link rel="shortcut icon" href="/images/logo-y-title.png" />
+  <link rel="stylesheet" href="/css/editUser.css">
+</head>
+  <body>
+  <%- include('./partials/header') %>
+  <div class="container">
+    <h1>Edita tu Ususario</h1>
+
+    <form action="?_method=PUT" method="POST"  class="form" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="exampleInputUsername">Ingresa tu nuevo nombre de usuario</label>
+        <input type="text" name="username" class="form-control" id="exampleImputUsername" value="<%= user.username %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Ingresá tu correo electrónico</label><br>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= user.email %>"><br>
+        <small style="color: red">
+          <%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %>
+            </small>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Subí una foto tuya para que los demas usuarios puedan verte!!!</label><br>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="avatar" value="<%= user.avatar %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresá tu contraseña</label><br>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="<%= user.email %>"><br>
+        <small style="color: red">
+          <%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %>
+        </small>
+      </div><br>
+      <button type="submit" class="button-enviar">Confirmar</button>
+    </form>
