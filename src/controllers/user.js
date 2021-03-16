@@ -78,5 +78,45 @@ module.exports = {
             
     })
     },
+    // edit: function(req,res){
+    //     db.User.findByPk(req.params.id)
+    //         .then(function(user){
+    //         res.render('editUser', {user})
+    //     })
+    // },
+    // update: function(req,res){
+    //     db.User.findOne({
+    //         where: {
+    //             id: req.params.id,
+    //         }
+    //     })
+    //     .then(function (user) {
+    //         let foto = user.imgpath
+    //         db.User.update({
+    //             username: req.body.username,
+    //             email: req.body.email,
+    //             password: bcrypt.hashSync(req.body.password, 12),
+    //             avatar: req.files.length > 0 ? req.files[0].filename : foto
+    //         }, {
+    //             where: {
+    //                 id: req.params.id
+    //             }
+    //         })
+    //         .then(function(usuarios) {
+    //             let usuarioLogeado = {
+    //                 id: usuarios.id,
+    //                 admin: usuarios.admin,
+    //                 username: usuarios.username,
+    //                 email: usuarios.email,
+    //                 avatar: usuarios.avatar
+    //             }
+    //             req.session.usuarioLogeado = usuarioLogeado;
+    //             res.redirect('/')
+    //         }).catch(function(e){
+    //             res.send(e)
+    //         })
+    //     })
+        
+    // },
     
 }
