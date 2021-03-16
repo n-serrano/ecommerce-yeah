@@ -12,7 +12,7 @@
 h1 {
     background-color: none;
     color: white;
-    font-size: 70px;
+    font-size: 50px;
 }
 
 /* SEARCH BAR */
@@ -364,4 +364,44 @@ section.productDetail .controls form > button {
 }
 .productDetail ul li {
     display: inherit;
+}
+
+#descriptionProduct {
+    margin: 3px;
+    background-color: rgb(223, 223, 223);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#priceProduct {
+    margin: 3px;
+    background-color: rgb(223, 223, 223);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#stockProduct {
+    margin: 3px;
+    background-color: rgb(223, 223, 223);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#nameProduct {
+    margin-top: 15px;
+    background-color: rgb(223, 223, 223);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.containerProduct {
+    text-align: center;
+    height: 600px;
+    background-color: white;
+    /* border: red solid; */
+    text-align: center;
+    
 }
