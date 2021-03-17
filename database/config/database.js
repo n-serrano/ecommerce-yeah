@@ -1,9 +1,9 @@
 module.exports = {
   "production": {
-    "username": "229453_",
-    "password": "ivanotero27",
-    "database": "ecommerce-yeah_ecom_db",
-    "host": "mysql-ecommerce-yeah.alwaysdata.net",
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_NAME,
+    "host": process.env.DB_HOST,
     "dialect": "mysql"
   },
   "test": {
