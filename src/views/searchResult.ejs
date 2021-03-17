@@ -9,25 +9,27 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/stylesheets/stylex.css" />
-        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/searchResult.css" />
         <link rel="shortcut icon" href="/images/logo-y-title.png" />
         <script src="../scripts/global.js"></script>
       </head>
 <body>
     <%- include('partials/header') %> 
     <main>
-        <h1 class="title">Estos son los resultados de la búsqueda</h1>
+        <h1 class="title">Estos son los resultados de la búsqueda</h1><br>
         
         <div class="product-container">
-            <section class="product"> 
+            <!-- <section class="product">  -->
         <% if (listado.length != 0) { %>
             <% for( let i = 0; i < listado.length; i++ ) { %>
-                    <a href="/detail/<%= listado[i].id %>" class="card">
+                <div class="product">
+                <a href="/detail/<%= listado[i].id %>" >
                         <img src="/uploads/products/<%= listado[i].imgpath %>" alt="">
                         <h2><%= listado[i].name %></h2>
-                        <h3>$ <%= listado[i].price %></h3>
+                        <h3>$ <%= new Intl.NumberFormat().format(listado[i].price) %></h3>
                         <p><%= listado[i].description %></p>
                     </a>
+                </div>    
                 <% } %>
             <% } else { %>
                 <h2>No encontramos productos para esta búsqueda</h2>

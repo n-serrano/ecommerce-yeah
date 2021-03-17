@@ -16,11 +16,19 @@
     <%- include('partials/header') %> 
     <main>
         <section class="productDetail">
-            <img src="/uploads/products/<%= product.imgpath %>" >
-            <h1><%= product.name %></h1>
-            <h3>Precio: $<%= product.price %></h3><br>
-            <h3>Descripcion: <%= product.description %></h3><br>
-            <h3>Stock: <%= product.stock %></h3><br>
+            <div class="containerProduct">
+                <ul>
+                    <li><img src="/uploads/products/<%= product.imgpath %>" ></li>
+                    <li><ul style="flex-direction: column;">
+                        <li><h1 id="nameProduct"><%= product.name %></h1></li>
+                        <li><h3 id="priceProduct">Precio: $ <%= new Intl.NumberFormat().format(product.price) %></h3></li>
+                        <li><h3 id="descriptionProduct">Descripción: <%= product.description %></h3></li>
+                        <li><h3 id="stockProduct">Stock: <%= product.stock %></h3></li></li>
+                    </ul>
+                </ul>
+                
+            </div>
+
             <div class="controls">
                 <% if(typeof usuarioLogeado == "undefined") { %>
                     <% } else  { %>
