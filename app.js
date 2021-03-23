@@ -20,12 +20,12 @@ app.use( session({
     resave: true,
     saveUninitialized: true}) )
 app.use( verSession )
+app.use(cookieParser());
 app.use( middlewareUsuarioLogueado );
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/', productsRouter);

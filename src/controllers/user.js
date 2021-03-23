@@ -22,7 +22,7 @@ module.exports = {
     logout: function (req, res){
         if (req.params.id != undefined) {
           req.session.usuarioLogeado = undefined;
-          res.cookie("recordarme", 0, {maxAge: 3800});
+          res.cookie("recordarme", 0, {maxAge: 0});
           res.redirect("/");
         } 
     },
@@ -69,7 +69,7 @@ module.exports = {
                 }
                 req.session.usuarioLogeado = usuarioLogeado;
             if(req.body.remember != undefined){ 
-                res.cookie("recordarme", usuarioLogeado.id, { maxAge:10});
+                res.cookie("recordarme", usuarioLogeado.id, { maxAge:86000});
             }
             return res.redirect('/')
         

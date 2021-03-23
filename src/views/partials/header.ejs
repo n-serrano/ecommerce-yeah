@@ -10,7 +10,8 @@
             type="text"
             placeholder="Buscar"
             name="search"
-          />
+            value= <%= (typeof laQuery != 'undefined')? laQuery : null %>
+          >
           <button class="lupa" type="submit" >
             <i class="fas fa-search"></i>
           </button>
