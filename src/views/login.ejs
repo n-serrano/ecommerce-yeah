@@ -18,10 +18,16 @@
         <form action=""  class="form" method="POST">
           <div class="form-group">
             <label for="exampleInputEmail1">Ingresá tu correo electrónico</label>
+            <small style="color: red;">
+              <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
+          </small>
           </div>
           <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <div class="form-group">
             <label for="exampleInputPassword1">Ingresá tu contraseña</label>
+            <small style="color: red;">
+              <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
+          </small>
           </div>
           <input type="password" name="password" class="form-control" id="exampleInputPassword1">
           <div class="form-group"> 

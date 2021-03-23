@@ -1,8 +1,20 @@
 const { check, body } = require('express-validator');
+const db = require("../../database/models/Index");
 
 module.exports = [
-    check('email')
-      .isEmail().withMessage("Debés ingresar un email válido. No te olvides del @"),
-    check('password')
-      .isLength({min: 6, max:12}).withMessage("El mínimo de caracteres es 6 y el máximo es 12")  
+    check("email")
+    .isEmail()
+    .withMessage("Debe ingresar un email válido"),
+    check("password")
+    .isLength({min:8})
+    .withMessage("Su contraseña debe contener al menos 8 caracteres"),
+    body('email').custom(value => {
+        return db.User.findUserByEmail(value).then(user => {
+          if (user) {
+            return Promise.reject('E-mail already in use');
+          }
+        });
+      })
+    // body("email").custom(function(value){}
+    // los campos contraseña y correo electronico deben ser los mismo datos que pusimos en el campo name del formulario
 ]
