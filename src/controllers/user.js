@@ -57,7 +57,7 @@ module.exports = {
             }
         })
         .then(function (usuarios) {
-            if (usuarios && bcrypt.compareSync(req.body.password, usuarios.password)) {
+           if (usuarios && bcrypt.compareSync(req.body.password, usuarios.password)) {
                 let usuarioLogeado = {
                     id: usuarios.id,
                     admin: usuarios.admin,
@@ -70,11 +70,10 @@ module.exports = {
                 res.cookie("recordarme", usuarioLogeado.id, { maxAge:86000});
             }
             return res.redirect('/')
+        } 
         
-            }
-            
-            
     })
+   
     },
     // edit: function(req,res){
     //     db.User.findByPk(req.params.id)

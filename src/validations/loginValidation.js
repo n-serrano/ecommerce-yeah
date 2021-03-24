@@ -6,7 +6,7 @@ module.exports = [
     .withMessage("Debe ingresar un email válido"),
     body("password").custom((value, { req }) => {
         if (value !== req.body.password) {
-          throw new Error("tu contraseña no es correcta");
+          return Promise.reject("tu contraseña no es correcta");
         }
         return true;
       })

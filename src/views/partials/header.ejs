@@ -23,7 +23,7 @@
         <a href="/users/login"><button class="login" name="login">Iniciá sesión</button></a>
         <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
         <% } else  { %>
-          <% if (usuarioLogeado.admin == 1) { %>
+          <% if (usuarioLogeado != "undefined" ) { %>
             <a href="/users/admin"><span>Crear Producto</span></a>
             <% } %>
         <div class="usLog">
