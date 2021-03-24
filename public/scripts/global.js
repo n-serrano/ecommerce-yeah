@@ -4,3 +4,4 @@ function closeSession(id) {
     window.location = "/:" + id;
   }
 }
+

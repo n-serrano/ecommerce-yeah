@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/stylesheets/stylex.css" />
     <link rel="shortcut icon" href="/images/logo-y-title.png" />
     <link rel="stylesheet" href="/css/admin.css">
+    <script src="../scripts/global.js"></script>
   </head>
   <body>
   <%- include('./partials/header') %>
@@ -20,21 +21,21 @@
     <form action="/create" method="POST"  class="form" enctype="multipart/form-data">
       <div class="group-form">
         <label for="name">Ingresa el nombre del producto</label><br>
-        <input type="text" name="name" class="form-control" id="nameProduct" placeholder="Ingresa el nombre del producto">
+        <input type="text" name="name" class="form-control" id="nameProduct" placeholder="Ingresa el nombre del producto" maxlength="21">
       </div>
       <div class="group-form">
         <label for="description">Danos una descripcion breve de tu producto</label><br>
-        <textarea rows="8" cols="60" name="description" class="form-control" id="descriptionProduct" placeholder="Escribi una breve descripcion de tu producto...."></textarea><br>
+        <textarea rows="8" cols="60" name="description" class="form-control" id="descriptionProduct" placeholder="Escribi una breve descripcion de tu producto...." maxlength="500"></textarea><br>
       </div>
       <div class="group-form">
         <label for="exampleFormControlFile1">Subí una imagen de tu producto para que los demás usuarios puedan verlo !!</label><br><br>
-        <input type="file" class="form-control-file" id="image" name="imgpath"><br>
+        <input type="file" class="form-control-file" id="image" name="imgpath" accept=".jpg,.jpeg,.png"><br>
       </div>
       <div class="group-form">
         <label for="price">Precio del producto</label><br>
         <!-- <button>U$S</button>
         <button>AR$</button> -->
-        <input type="number" class="form-control" name="price" id="priceProduct" placeholder="$...">
+        <input type="number"  class="form-control" name="price" id="priceProduct" placeholder="$..." maxlength="11">
         <!-- <input type="number" class="form-control" name="price" id="priceProduct" placeholder="U$S..."> -->
       </div>
       <div class="group-form">
