@@ -42,8 +42,6 @@ module.exports = {
             .then(function (){
                 res.redirect('/')
             })
-            // fs.writeFileSync(path.join(__dirname, '../data/usuarios.json'), JSON.stringify(usuarios, null, 4))
-            // res.redirect('/')
         } else {
             res.render('register', {
                 errors: errors.mapped()
