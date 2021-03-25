@@ -17,8 +17,14 @@
   <%- include('./partials/header') %>
   <div class="container">
     <h1>Crea tu Producto</h1>
+    
+    <div class="errores">
+      <ul>
 
-    <form action="/create" method="POST"  class="form" enctype="multipart/form-data">
+      </ul>
+  </div>
+
+    <form  id="agregar" action="/create" method="POST"  class="form" enctype="multipart/form-data">
       <div class="group-form">
         <label for="name">Ingresa el nombre del producto</label><br>
         <input type="text" name="name" class="form-control" id="nameProduct" placeholder="Ingresa el nombre del producto" maxlength="21">

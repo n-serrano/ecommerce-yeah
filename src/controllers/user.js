@@ -1,13 +1,8 @@
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcryptjs');
-// const db = require("../../database/models/Index")
-
 const { validationResult } = require('express-validator');
 const db = require('../../database/models/Index');
 
-let usuarios = fs.readFileSync(path.join(__dirname, '../data/usuarios.json'), 'utf8');
-usuarios = JSON.parse(usuarios);
+
 
 module.exports = {
     index: function(req, res) {
@@ -32,6 +27,11 @@ module.exports = {
     create: function(req, res) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
+        // db.User.findOne(
+        //     where : {
+
+        //     }
+        // )
             db.User.create({
                 admin:0,
                 username: req.body.username,
@@ -50,30 +50,60 @@ module.exports = {
 
 
     },
-    checkUser: function(req, res) {
+    // checkUser: function(req, res) {
+    //     db.User.findOne({
+    //         where : {
+    //             email:req.body.email,
+    //         }
+    //     })
+    //     .then(function (usuarios) {
+    //        if (usuarios && bcrypt.compareSync(req.body.password, usuarios.password)) {
+    //             let usuarioLogeado = {
+    //                 id: usuarios.id,
+    //                 admin: usuarios.admin,
+    //                 username: usuarios.username,
+    //                 email: usuarios.email,
+    //                 avatar: usuarios.avatar
+    //             }
+    //             req.session.usuarioLogeado = usuarioLogeado;
+    //         if(req.body.remember != undefined){ 
+    //             res.cookie("recordarme", usuarioLogeado.id, { maxAge:86000});
+    //         }
+    //         return res.redirect('/')
+    //     } 
+        
+    // })
+   
+    // },
+    checkUser: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
         db.User.findOne({
-            where : {
-                email:req.body.email,
-            }
+            where: {
+                email: req.body.email
+            }   
         })
-        .then(function (usuarios) {
-           if (usuarios && bcrypt.compareSync(req.body.password, usuarios.password)) {
+        .then(function(user){
+            if(user && bcrypt.compareSync(req.body.password, user.password)){
                 let usuarioLogeado = {
-                    id: usuarios.id,
-                    admin: usuarios.admin,
-                    username: usuarios.username,
-                    email: usuarios.email,
-                    avatar: usuarios.avatar
+                    id: user.id,
+                    admin: user.admin,
+                    username: user.username,
+                    email: user.email,
+                    avatar: user.avatar
                 }
                 req.session.usuarioLogeado = usuarioLogeado;
             if(req.body.remember != undefined){ 
-                res.cookie("recordarme", usuarioLogeado.id, { maxAge:86000});
+                res.cookie("recordarme", usuarioLogeado.id, { maxAge: 15*24*60*60*1000});
             }
             return res.redirect('/')
-        } 
+        }
+       
         
-    })
-   
+        })
+    } else {
+        return res.render("login", { errors: errors.mapped(), old: req.body })
+    }
     },
     // edit: function(req,res){
     //     db.User.findByPk(req.params.id)
@@ -115,5 +145,4 @@ module.exports = {
     //     })
         
     // },
-    
 }

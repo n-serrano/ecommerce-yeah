@@ -16,10 +16,18 @@
       <div class="container">
         <h1>Creá tu cuenta</h1>
         
-        <form action="" method="post"  class="form" enctype="multipart/form-data">
+        <div class="errors">
+          <ul>   
+         </ul>
+      </div>
+        
+        <form action=""  id="register" method="post"  class="form" enctype="multipart/form-data">
           <div class="form-group">
             <label for="exampleInputUsername">Ingresa tu nombre de usuario</label>
-            <input type="text" name="username" class="form-control" id="exampleImputUsername">
+            <input type="text" name="username" class="form-control" id="exampleImputUsername"><br>
+            <small style="color: red">
+              <%= (typeof errors != 'undefined' && errors.username) ? errors.username.msg : '' %>
+            </small>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Ingresá tu correo electrónico</label><br>
@@ -41,5 +49,7 @@
           </div><br>
           <button type="submit" class="button-enviar">Confirmar</button>
       </form>
-      </div>
-      </body>
+    </div>
+   <script src="../../public/scripts/validations.js"></script>
+  </body>
+ 

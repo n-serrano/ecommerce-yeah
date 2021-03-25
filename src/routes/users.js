@@ -4,6 +4,7 @@ const path = require('path');
 const multerRegister = require('../middlewares/multerRegister');
 const registerValidation = require('../validations/registerValidation');
 const userController = require('../controllers/user')
+const loginValidation = require('../validations/loginValidation')
 
 
 // Rutas del Register 
@@ -13,7 +14,7 @@ router.post('/users/register', multerRegister.any(), registerValidation, userCon
 // Rutas del login
 router.get('/users/login', userController.login);
 
-router.post('/users/login', userController.checkUser);
+router.post('/users/login',loginValidation, userController.checkUser);
 
 router.get('/:id', userController.logout);
 
