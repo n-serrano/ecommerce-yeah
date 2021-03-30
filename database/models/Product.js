@@ -27,7 +27,11 @@ module.exports = function (sequelize, dataTypes) {
         },
         id_status: {
             type: dataTypes.INTEGER,
+        },
+        id_category: {
+            type: dataTypes.INTEGER,
         }
+
 
     }
 
@@ -40,11 +44,11 @@ module.exports = function (sequelize, dataTypes) {
 
     const Product = sequelize.define(alias, cols, config)
     Product.associate = (models)=>{
-        // Product.hasMany(models.Image,
-        //     {
-        //         as: "image",        
-        //         foreignKey: "id_product"   
-        //     }),
+        Product.hasMany(models.Category,
+            {
+                as: "category",        
+                foreignKey: "id_category"   
+            }),
         Product.belongsTo(models.Status,
             {
                 as: "status",        
