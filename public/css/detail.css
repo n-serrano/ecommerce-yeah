@@ -329,10 +329,7 @@ section.productDetail {
 
 section.productDetail h1 {
     font-size: 72px;
-    margin-bottom: 10px;
-}
-section.productDetail ul {
-    text-align: center
+    /* margin-bottom: 10px; */
 }
 
 section.productDetail .controls {
@@ -367,41 +364,115 @@ section.productDetail .controls form > button {
 }
 
 #descriptionProduct {
-    margin: 3px;
+    /* margin: 3px; */
     background-color: rgb(223, 223, 223);
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 10px 0px 10px 10px;
+    width: 600px
+
 }
 
 #priceProduct {
-    margin: 3px;
-    background-color: rgb(223, 223, 223);
+    /* margin: 3px; */
+    /* background-color: rgb(223, 223, 223); */
     padding: 15px;
     border-radius: 10px;
-    text-align: center;
+    text-align: start;
+    font-size: 20px
 }
 
 #stockProduct {
-    margin: 3px;
-    background-color: rgb(223, 223, 223);
+    /* margin: 3px; */
+    /* background-color: rgb(223, 223, 223); */
     padding: 15px;
     border-radius: 10px;
     text-align: center;
 }
 
 #nameProduct {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     background-color: rgb(223, 223, 223);
     padding: 15px;
     border-radius: 10px;
-    text-align: center;
+    text-align: start;
+    font-size: 30px;
+    width: 100%;
 }
 
 .containerProduct {
     text-align: center;
-    height: 600px;
+    height: 100%;
     background-color: white;
-    /* border: red solid; */
-    text-align: center;
+    text-align: start;
+    border-radius: 15px;
+    border:rgb(190, 190, 190) 1px solid;
+    box-shadow: gray 1px 1px 5px 3px;
     
+}
+
+.imgProduct {
+    width: 400px;
+    border: rgb(190, 190, 190) 1px solid;
+    border-radius: 15px;
+    margin-top: 5px;
+    align-items: center;
+    object-fit: contain;
+}
+
+.descriptionProductCard {
+    /* border:gray 10px solid; */
+    padding: 50px;
+
+}
+
+.titleLabel {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.grayTitleLabel {
+    margin-left: 10px;
+    background-color: rgb(223, 223, 223);
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: rgb(179, 179, 179) 1px solid;
+}
+
+.buttonPurchase {
+    padding: 10px;
+    outline: none;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    transition: ease-in-out 0.3ms;
+}
+
+.buttonPurchase:hover {
+    background-color: rgb(0, 167, 0);
+}
+
+.buttonPurchase:active {
+    background-color: rgb(0, 195, 0);
+}
+
+.buttonPurchaseBlue {
+    padding: 10px;
+    outline: none;
+    background-color: rgb(0, 45, 128);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    transition: ease-in-out 0.3ms;
+}
+
+.buttonPurchaseBlue:hover {
+    background-color: rgb(19, 52, 163);
+}
+
+.buttonPurchaseBlue:active {
+    background-color: rgb(26, 30, 230);
 }

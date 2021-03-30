@@ -18,13 +18,22 @@
         <section class="productDetail">
             <div class="containerProduct">
                 <ul>
-                    <li><img src="/uploads/products/<%= product.imgpath %>" ></li>
-                    <li><ul style="flex-direction: column;">
-                        <li><h1 id="nameProduct"><%= product.name %></h1></li>
-                        <li><h3 id="priceProduct">Precio: $ <%= new Intl.NumberFormat().format(product.price) %></h3></li>
-                        <li><h3 id="descriptionProduct">Descripción: <%= product.description %></h3></li>
-                        <li><h3 id="stockProduct">Stock: <%= product.stock %></h3></li></li>
-                    </ul>
+                    <li><img class="imgProduct" src="/uploads/products/<%= product.imgpath %>" ></li>
+                    <li class="descriptionProductCard">
+                        <ul style="flex-direction: column;">
+                            <li><h1 id="nameProduct"><%= product.name %></h1></li>
+                            <li><h3 class="titleLabel">Precio:</h3></li>
+                            <li><h3 id="priceProduct">$ <%= new Intl.NumberFormat().format(product.price) %></h3></li>
+                            <li><h3 class="grayTitleLabel">Descripción:</h3></li>
+                            <li><h3 id="descriptionProduct"> <%= product.description %></h3></li>
+                            <li><h3 class="titleLabel">Stock:</h3></li>
+                            <li><h3 id="stockProduct"><%= product.stock %></h3></li>
+                            <ul>
+                            <li><button class="buttonPurchase">Comprar</button></li>
+                            <li><button class="buttonPurchaseBlue">Contactar</button></li>
+                            </ul>
+                        </ul>
+
                 </ul>
                 
             </div>
