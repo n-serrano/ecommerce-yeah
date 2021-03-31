@@ -6,17 +6,17 @@ module.exports = function (sequelize, dataTypes) {
             autoIncrement: true,
             primaryKey: true
         },
-        status: {
+        title: {
             type: dataTypes.STRING(20),
             NotNull: true
         }
+       
     }
 
     let config = {
-        tableName: "status",
-        timestamp: true, 
-        underscored: true, 
-        paranoid:true
+        tableName: "category",
+        timestamp: true,
+        underscored: true,
     }
 
     const Category = sequelize.define(alias, cols, config)

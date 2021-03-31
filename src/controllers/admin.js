@@ -2,7 +2,12 @@ const db = require("../../database/models/Index");
 
 module.exports = {
     admin: function(req,res){
-        res.render("admin");
+        db.Category.findAll()
+        .then(function (category){
+            res.render('admin', {category});
+        })
+        
+        
     },
     create: function (req, res) {
         db.Product.create({
@@ -11,7 +16,8 @@ module.exports = {
             description: req.body.description,
             price: req.body.price,
             stock: req.body.stock,
-            id_status: 1
+            id_status: 1,
+            id_category: req.body.category
         })
         .then( function () {
             res.redirect('/')

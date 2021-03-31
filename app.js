@@ -5,6 +5,8 @@ const indexRouter = require('./src/routes/index');
 const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users');
 const adminRouter = require('./src/routes/admin');
+const apiUserRouter = require('./src/routes/api/user')
+const apiProductRouter = require('./src/routes/api/product')
 const session = require('express-session');
 const middlewareUsuarioLogueado = require('./src/middlewares/renderUsuarioLogueado');
 const verSession = require('./src/middlewares/verSession');
@@ -31,5 +33,7 @@ app.use('/', indexRouter);
 app.use('/', productsRouter);
 app.use('/', usersRouter);
 app.use('/', adminRouter);
+app.use('/', apiUserRouter);
+app.use('/', apiProductRouter);
 
 app.listen(port, ()=> console.log(`servidor corriendo en el puerto: ${port}`));

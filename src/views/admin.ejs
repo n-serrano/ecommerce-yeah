@@ -48,6 +48,16 @@
         <label for="stock">Stock del producto</label><br>
         <input type="number" class="form-control" name="stock" id="stockProduct" placeholder="...">
       </div>
+      <div class="group-form">
+        <h2>Categoriza tu producto!!</h2>
+            <select aria-placeholder="Seleccione la categoria" name="category" class="category">
+            <% if (typeof category != "undefined") {%>
+            <% for(let i=0; i< category.length; i++) {%>
+                <option value=<%=category[i].id %>><%= category[i].title %></option>
+                <% } %>
+              <% } %>
+            </select> 
+    </div>
       <button type="submit" class="button-enviar">Confirmar</button>
       
     </form>

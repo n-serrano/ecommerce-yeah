@@ -24,7 +24,7 @@
         <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
         <% } else  { %>
           <% if (usuarioLogeado != "undefined" ) { %>
-            <a href="/users/admin"><span>Crear Producto</span></a>
+            <a href="/users/admin/"><span>Crear Producto</span></a>
             <% } %>
         <div class="usLog">
           <a id="usLogName" href="/users/perfil/<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>
