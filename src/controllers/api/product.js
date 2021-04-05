@@ -3,29 +3,43 @@ const db = require('../../../database/models/Index');
 
 module.exports = {
     list: function (req, res) {
-        db.Product.findAll({ include: "category" })
-            .then(function (products) {
-                for (let i = 0; i < products.length; i++) {
-                    products[i].setDataValue("endpoint", "/api/products/" + products[i].id)
-                }
+        db.Category.findAll().then( function (category){
 
-                let apiResponse= {
-                    meta: {
-                        status: 200,
-                        url: "/api/products",
-                        total: products.length
-                    },
-                    data: products
-                }
-                res.json(apiResponse)
+        
+            db.Product.findAll({ include: "category" })
+                .then(function (products) {
+                    for (let i = 0; i < products.length; i++) {
+                        products[i].setDataValue("endpoint", "/api/products/" + products[i].id)
+                    }
+
+                    let apiResponse= {
+                        meta: {
+                            status: 200,
+                            url: "/api/products",
+                            total: products.length, categories: category.length
+                        },
+                        data: products
+                    }
+                    res.json(apiResponse)
             })
+        })
             .catch(function () {
                 res.json({ status: 500 })
             })
     },
-
-
-
+    
+    totalProducts: function (req, res) {
+        db.Product.count().then(function(number){
+            res.json(number)
+        })
+    },
+    
+    productDetail: function (req, res) {
+        db.Product.products().then(function(number){
+            res.json(number)
+        })
+    },
+    
     detail: function (req, res) {
         db.Product.findByPk(req.params.id, {
             include: "category"
@@ -48,24 +62,18 @@ module.exports = {
                 res.json({ status: 500 })
             })
     },
-    listFilter: function (req, res) {
-        db.Product.findAll({
-            include: "category",
-            where: {
-                id_category: req.params.id,
-            }
-        })
+    categoryFilter: function (req, res) {
+        db.Category.findAll(totalCategories)
 
-            .then(function (filtredProducts) {
-                if (filtredProducts.length > 0) {
+            .then(function (totalCategories) {
+                if (totalCategories.length > 0) {
                     let apiResponse = {
                         meta: {
                             status: 200,
-                            category_name: filtredProducts[1].category.title,
-                            url: "/api/products/category/" + req.params.id,
-                            total: filtredProducts.length
+                            url: "/api/products/category",
+                            total: totalCategories.length
                         },
-                        data: filtredProducts
+                        data: totalCategories
                     }
                     return res.json(apiResponse)
                 } else {

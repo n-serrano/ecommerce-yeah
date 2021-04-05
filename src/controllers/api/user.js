@@ -24,6 +24,11 @@ module.exports = {
                 res.json({ status: 500 })
             })
     },
+    totalUsers: function (req, res) {
+        db.User.count().then(function(number){
+            res.json(number)
+        })
+    },
 
 
     detail: function (req, res) {
