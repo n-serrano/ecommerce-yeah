@@ -14,29 +14,31 @@
     <script src="../scripts/global.js"></script>
     <script src="../scripts/buttonToTop.js"></script>
   </head>
-  <body>
+<body>
     
     <%- include('./partials/header') %>
+    
 
     <div class="product-container">
       <% if(typeof product == "undefined") { %>
-        <h2>No hay productos cargados aún</h2>
+        <h2>No hay productos cargados aun</h2>
         <%} else  { %> 
-          <%for (let i = 0; i < product.length; i++) { %>
-            <div class="product" id="item1">
-              <a href="/detail/<%= product[i].id %>" class="card">
-              <img class="product-image" src="/uploads/products/<%= product[i].imgpath %>" alt="">
-            <h2><%= product[i].name %></h2>
-            <h3>$ <%= new Intl.NumberFormat().format(product[i].price) %></h3>
-            
-            <p><%= product[i].description %></p>
-          </a>
-          </div>
-          <%}%>
-        <%}%>
+      <%for (let i = 0; i < product.length; i++) { %>
+        <div class="product" id="item1">
+          <a href="/detail/<%= product[i].id %>" class="card">
+          <img src="/uploads/products/<%= product[i].imgpath %>" alt="">
+        <h2><%= product[i].name %></h2>
+        <h3>$ <%= new Intl.NumberFormat().format(product[i].price) %></h3>
+        
+        <p><%= product[i].description %></p>
+      </a>
+      </div>
+      <%}%>
+    <%}%>
+     
     </div>
 
       <%- include('./partials/footer') %>
   
-  </body>
+    </body>
 </html>

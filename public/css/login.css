@@ -57,5 +57,6 @@ h1 {
     align-items: center;
 }
 .checkbox {
-    margin-right: 3px;
+    height: 10px;
+    width: 10px;
 }
