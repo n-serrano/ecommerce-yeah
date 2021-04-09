@@ -13,25 +13,24 @@
         <link rel="shortcut icon" href="/images/logo-y-title.png" />
         <script src="../scripts/global.js"></script>
       </head>
-<body>
+  <body>
 
     <%- include('./partials/header') %>
 
-    
-    <h1 id="titleProfile">Este es tu perfil 😎 (carita refachera)</h1><br><br><br>
+    <h1 id="titleProfile">Este es tu perfil😎 (Carita re fachera)</h1><br><br><br>
 
     <div class="prof-container">
-    <ul id="ulBullets">
-        <% if(usuarioLogeado.avatar == '') { %>
-        <li><img src="/uploads/avatars/default.png" alt=""></li><br>
-        <% } else  { %>
-        <li><img src="/uploads/avatars/<%= usuarioLogeado.avatar %>" alt=""></li><br>
-        <% } %>
-        <li>Nombre de usuario: <%= usuarioLogeado.username %></li>
-        <li>Correo electrónico: <%= usuarioLogeado.email %></li>
-        <li>Usuario número: <%= usuarioLogeado.id %></li>
-        <!-- <li><a style="cursor:pointer"  class="controls" href="/edit/<%= usuarioLogeado.id %>"><button>Editar</button></a></li> -->
+      <ul id="ulBullets">
+          <% if(usuarioLogeado.avatar == '') { %>
+          <li><img src="/uploads/avatars/default.png" alt=""></li><br>
+          <% } else  { %>
+          <li><img src="/uploads/avatars/<%= usuarioLogeado.avatar %>" alt=""></li><br>
+          <% } %>
+          <li>Nombre de usuario: <%= usuarioLogeado.username %></li>
+          <li>Correo electrónico: <%= usuarioLogeado.email %></li>
+          <li>Usuario número: <%= usuarioLogeado.id %></li>
+          <!-- <li><a style="cursor:pointer"  class="controls" href="/edit/<%= usuarioLogeado.id %>"><button>Editar</button></a></li> -->
       </ul>
-</div>
-</body>
+    </div>
+  </body>
 </html>

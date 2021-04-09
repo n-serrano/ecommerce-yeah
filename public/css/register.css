@@ -13,16 +13,20 @@ h1 {
 }
 
 .container {
+    top: 75px;
     position: relative;
-    height: 750px;
+    height: 600px;
     width: 600px;
-    margin: 0 auto;
+    margin: auto;
     background: white;
     border-radius: 4px;
     box-shadow: 0px 2px 10px 0px grey;
-    border-top: 65px white solid;
     align-items: center;
     justify-content: center;
+}
+
+.cuenta{
+    padding-top: 20px;
 }
 
 input {

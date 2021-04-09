@@ -12,39 +12,37 @@
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="shortcut icon" href="/images/logo-y-title.png" />
     <script src="../../public/scripts/loginValidation.js"></script>
-    </head>
-    <body>
-      <div class="container">
-        <h1>Iniciá sesión</h1>
-        <div class="errores">
-          <ul>   
-         </ul>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Iniciá sesión</h1>
+
+      <div class="errors">
+        <ul>
+        </ul>
       </div>
-        <form id="login" action=""  class="form" method="POST" >
-          <div class="form-group">
-            <label for="exampleInputEmail1">Ingresá tu correo electrónico</label><br>
-            <small style="color: red;">
-              <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
+
+      <form id="login" action=""  class="form" method="POST" >
+        <div class="form-group">
+          <label for="exampleInputEmail1">Ingresá tu correo electrónico</label><br>
+          <small style="color: red;">
+            <%= (typeof errors !='undefined' && errors.email) ? errors.email.msg : '' %>
           </small>
-          </div>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div class="form-group">
-            <label for="exampleInputPassword1">Ingresá tu contraseña</label><br>
-            <small style="color: red;">
-              <%= (typeof errors !='undefined' && errors.password) ? errors.password.msg : '' %>
-          </small>
-          </div>
-          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-          <div class="form-group"> 
+        </div>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="form-group">
+          <label for="exampleInputPassword1">Ingresá tu contraseña</label><br>
+          <small style="color: red;">
+          <%= (typeof errors !='undefined' && errors.password) ? errors.password.msg : '' %>
+        </small>
+        </div>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        <div class="form-group"> 
           <label for="remember">Recordame</label>
           <input type="checkbox" name="remember" class="checkbox">
         </div>
         <button type="submit" class="button-enviar">Acceder</button>
       </form>
     </div>
-
-          </div>
-        </form>
-      </div>
-    </body>
-   
+  </body>
+</html>

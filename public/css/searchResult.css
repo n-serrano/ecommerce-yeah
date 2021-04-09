@@ -8,17 +8,15 @@
     margin-bottom: 45px;
     box-shadow: 0px 0px 3px 1px;
 }
-
 h1 {
     background-color: none;
     color: white;
     font-size: 70px;
 }
-
 /* SEARCH BAR */
 
 .search-container {
-    width: 600px;
+    width: 40%;
 }
 
 form {
@@ -27,7 +25,6 @@ form {
     height: 35px;
     border-radius: 4px 0px 0px 4px;
 }
-
 .barra-search {
     border: 2px #380066 solid;
     margin: 0 0 0 0px;
@@ -38,13 +35,11 @@ form {
     font-size: 13px;
     background: rgb(240, 240, 240);
 }
-
 .barra-search:focus {
     background: white;
     color: black;
     font-style: bold;
 }
-
 .lupa {
     border: none; 
     margin: 0 0px 0px 0px;  
@@ -54,19 +49,14 @@ form {
     border-radius: 0px 4px 4px 0px;
     color: white;
 }
-
 .lupa:active {
     color: rgb(192, 192, 192);
 }
-
 /* SEARCH BAR */
-
 button {
     cursor: pointer;
 }
-
 /* LOG REG CART */
-
 .login {
     border: none;
     background-color: #380066;
@@ -78,18 +68,15 @@ button {
     outline: none;
     transition: all 0.2s ease-in-out;
 }
-
 .login:hover {
     background: #45017c;
     transform: translateY(-1px);
     box-shadow: 0px 2px 3px -2px;
 }
-
 .login:active {
     background: #6b00c2;
     transform: translateY(3px);
 }
-
 .register {
     border: none;
     background-color: #380066;
@@ -101,18 +88,15 @@ button {
     outline: none;
     transition: all 0.2s ease-in-out;
 }
-
 .register:hover {
     background: #45017c;
     transform: translateY(-1px);
     box-shadow: 0px 2px 3px -2px;
 }
-
 .register:active {
     background: #6b00c2;
     transform: translateY(3px);
 }
-
 .cart {
     border: none;
     background-color: #380066;
@@ -124,22 +108,16 @@ button {
     outline: none;
     transition: all 0.2s ease-in-out;
 }
-
 .cart:hover {
     background: #45017c;
     transform: translateY(-1px);
     box-shadow: 0px 2px 3px -2px;
 }
-
 .cart:active {
     background: #6b00c2;
     transform: translateY(3px);
 }
-
-
-
 /* LOG REG CART */
-
 .product-container {
     margin: 0 auto;
     width: 1140px;
@@ -150,7 +128,6 @@ button {
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .product {
     margin: 15px 15px;
     width: 250px;
@@ -160,32 +137,38 @@ button {
     transition: all 0.2s ease-in-out;
     /* padding: 20px; */
 }
-
 .product:hover {
     transform: translateY(-5px);
     box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.274);
 }
 
 .text-footer {
-    height: 136px;
+    margin-top: 3%;
+    position: relative;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    background-color: grey;
+    background-color: rgb(173, 173, 173);
     color: white;
-    display: inline-flex;
-    /* flex-wrap: wrap; */
+    padding: 15px;
+    text-align: center;
+}
+
+.footer-links{
+    display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 ul {
     list-style-type: none;
     display: inline-flex;
 }
-
 li {
     margin: 0 15px;
 }
-
 a {
     text-decoration: none;
     color: white;
@@ -199,7 +182,6 @@ a {
     height: 30px;
     width: 30px;
 }
-
 .log-reg-cart {
     flex-direction: row;
 }
@@ -213,16 +195,13 @@ a {
 .title {
     align-items: center;
 }
-
 /* ======= USUARIO HEADER ========= */
-
 .usLog {
     position: relative;
     display: inline-flex;
     align-items: center;
     margin: 0px 10px;
 }
-
 .usMenu {
     position: relative;
     display: inline-flex;
@@ -230,12 +209,9 @@ a {
     margin: 0px 10px;
     margin-top: 0px;
 }
-
-
 #usLogImg {
     border-radius: 50%;
 }
-
 #closeSessionButton {
     border: none;
     background-color: #380066;
@@ -247,23 +223,14 @@ a {
     outline: none;
     transition: all 0.2s ease-in-out;
 }
-
 #closeSessionButton:hover {
     background: #45017c;
     transform: translateY(-1px);
     box-shadow: 0px 2px 3px -2px;
 }
-
 #closeSessionButton:active {
     background: #6b00c2;
     transform: translateY(3px);
-}
-
-footer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    margin-top: 100%;
 }
 
 .product img {
@@ -277,17 +244,14 @@ footer {
     padding: 8px;
     font-size: 20px;
 }
-
 .product h3 {
     padding: 0px 0px 10px 10px;
     font-size: 18px;
 }
-
 .product p {
     padding: 0px 0px 10px 10px;
     font-size: 10px;
 }
-
 .title  {
     color: black;
     font-size: 30px;
