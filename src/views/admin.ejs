@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="/stylesheets/stylex.css" />
     <link rel="shortcut icon" href="/images/logo-y-title.png" />
     <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <script src="../scripts/global.js"></script>
   </head>
   <body>
   <%- include('./partials/header') %>
   <div class="container">
-    <h1>Crea tu Producto</h1>
+    <h1 class="titulo" >Crea tu Producto</h1>
     
     <div class="errores">
       <ul>
@@ -51,6 +53,7 @@
       <div class="group-form">
         <h2>Categoriza tu producto!!</h2>
             <select aria-placeholder="Seleccione la categoria" name="category" class="category">
+              <option value="">Selecciona tu categoria</option>
             <% if (typeof category != "undefined") {%>
             <% for(let i=0; i< category.length; i++) {%>
                 <option value=<%=category[i].id %>><%= category[i].title %></option>

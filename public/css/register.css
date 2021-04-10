@@ -11,6 +11,27 @@ h1 {
     text-align: center;
     
 }
+.backArrow {
+    margin: px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background:  #380066;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    outline: none;
+}
+.backArrow:hover {
+    background: #45017c;
+    transform: translateY(-1px);
+    box-shadow: 0px 2px 3px -2px;
+}
+
+.backArrow:active {
+    background: #6b00c2;
+    transform: translateY(3px);
+}
 
 .container {
     top: 75px;
@@ -79,4 +100,9 @@ input {
 
 .form-group {
     margin: 15px;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90% !important;
+    }
 }

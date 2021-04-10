@@ -1,0 +1,19 @@
+.text-footer {
+    margin-top: 3%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(173, 173, 173);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.footer-links{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}

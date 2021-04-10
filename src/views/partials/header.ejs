@@ -13,7 +13,7 @@
             value= <%= (typeof laQuery != 'undefined')? laQuery : null %>
           >
           <button class="lupa" type="submit" >
-            <i class="fas fa-search"></i>
+            <img src="/images/search-solid.svg" class="imgLupa"/>
           </button>
         </form>
       </div>
@@ -22,6 +22,7 @@
           <% if(typeof usuarioLogeado == "undefined") { %>
         <a href="/users/login"><button class="login" name="login">Iniciá sesión</button></a>
         <a href="/users/register"><button class="register" name="register">Creá una cuenta</button></a>
+        </button></a>
         <% } else  { %>
           <% if (usuarioLogeado != "undefined" ) { %>
             <a href="/users/admin/"><span>Crear Producto</span></a>
@@ -34,14 +35,15 @@
             <img class="usLog" id="usLogImg" src="/uploads/avatars/<%= usuarioLogeado.avatar %>"">
             <% } %>
           </a>
+          
             <div class="usMenu">
               <button type="submit" id="closeSessionButton" onclick="closeSession('<%= usuarioLogeado.id %>')">Cerrar sesión</button>
             </div>
+            <a href="/products/cart"><button class="cart" name="cart">
+              <img class="cartImg" src="/images/shopping-cart-solid.svg"/>
        </div>
        <% } %>
-        <a href="/products/cart"><button class="cart" name="cart">
-          <i class="fas fa-shopping-cart"></i>
-        </button></a>
+        
       </div>
     </div>
 </header>

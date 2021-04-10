@@ -9,7 +9,7 @@ module.exports = [
     .isLength({min:4})
     .withMessage("Su nombre de usuario debe de contener al menos 4 caracteres"),
     check("password")
-    .isLength({min:8})
+    .isLength({min:6})
     .withMessage("Su contraseña debe contener al menos 8 caracteres"),
     body('email').custom((value , res) => {
        return db.User.findOne({

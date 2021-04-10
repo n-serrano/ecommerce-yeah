@@ -3,9 +3,6 @@ const db = require('../../../database/models/Index');
 
 module.exports = {
     list: function (req, res) {
-        db.Category.findAll().then( function (category){
-
-        
             db.Product.findAll({ include: "category" })
                 .then(function (products) {
                     for (let i = 0; i < products.length; i++) {
@@ -16,28 +13,15 @@ module.exports = {
                         meta: {
                             status: 200,
                             url: "/api/products",
-                            total: products.length, categories: category.length
+                            total: products.length, 
                         },
                         data: products
                     }
                     res.json(apiResponse)
             })
-        })
             .catch(function () {
                 res.json({ status: 500 })
             })
-    },
-    
-    totalProducts: function (req, res) {
-        db.Product.count().then(function(number){
-            res.json(number)
-        })
-    },
-    
-    productDetail: function (req, res) {
-        db.Product.products().then(function(number){
-            res.json(number)
-        })
     },
     
     detail: function (req, res) {
@@ -62,15 +46,15 @@ module.exports = {
                 res.json({ status: 500 })
             })
     },
-    categoryFilter: function (req, res) {
-        db.Category.findAll(totalCategories)
+    totalCategory: function (req, res) {
+        db.Category.findAll()
 
             .then(function (totalCategories) {
                 if (totalCategories.length > 0) {
                     let apiResponse = {
                         meta: {
                             status: 200,
-                            url: "/api/products/category",
+                            url: "/api/category",
                             total: totalCategories.length
                         },
                         data: totalCategories
@@ -84,5 +68,26 @@ module.exports = {
                 res.json({ status: 500 })
             })
     },
+    productForCategory: function (req, res) {
+        db.Product.findAll({ include: "category" })
+            .then(function (products) {
+                for (let i = 0; i < products.length; i++) {
+                    let relatedProducts = products[i].category
+                }
+
+                let apiResponse= {
+                    meta: {
+                        status: 200,
+                        url: "/api/products/category",
+                        total: relatedProducts.length, 
+                    },
+                    data: products
+                }
+                res.json(apiResponse)
+        })
+        .catch(function () {
+            res.json({ status: 500 })
+        })
+},
 
 }

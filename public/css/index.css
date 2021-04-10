@@ -1,126 +1,3 @@
-.topnav {
-    position: relative;
-    background-color: #8c00ff;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    margin-bottom: 45px;
-    box-shadow: 0px 0px 3px 1px;
-}
-h1 {
-    background-color: none;
-    color: white;
-    font-size: 70px;
-}
-/* SEARCH BAR */
-
-.search-container {
-    width: 40%;
-}
-
-form {
-    background-color: none;
-    display: flex;
-    height: 35px;
-    border-radius: 4px 0px 0px 4px;
-}
-.barra-search {
-    border: 2px #380066 solid;
-    margin: 0 0 0 0px;
-    padding: 10px;
-    outline: none;
-    border-radius: 4px 0px 0px 4px;
-    width: 100%;
-    font-size: 13px;
-    background: rgb(240, 240, 240);
-}
-.barra-search:focus {
-    background: white;
-    color: black;
-    font-style: bold;
-}
-.lupa {
-    border: none; 
-    margin: 0 0px 0px 0px;  
-    background: #380066;
-    width: 60px;
-    outline: none;
-    border-radius: 0px 4px 4px 0px;
-    color: white;
-}
-.lupa:active {
-    color: rgb(192, 192, 192);
-}
-/* SEARCH BAR */
-button {
-    cursor: pointer;
-}
-/* LOG REG CART */
-.login {
-    border: none;
-    background-color: #380066;
-    color: white;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    margin-right: 10px;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-}
-.login:hover {
-    background: #45017c;
-    transform: translateY(-1px);
-    box-shadow: 0px 2px 3px -2px;
-}
-.login:active {
-    background: #6b00c2;
-    transform: translateY(3px);
-}
-.register {
-    border: none;
-    background-color: #380066;
-    color: white;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    margin-right: 10px;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-}
-.register:hover {
-    background: #45017c;
-    transform: translateY(-1px);
-    box-shadow: 0px 2px 3px -2px;
-}
-.register:active {
-    background: #6b00c2;
-    transform: translateY(3px);
-}
-.cart {
-    border: none;
-    background-color: #380066;
-    color: white;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    width: 50px;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-}
-.cart:hover {
-    background: #45017c;
-    transform: translateY(-1px);
-    box-shadow: 0px 2px 3px -2px;
-}
-.cart:active {
-    background: #6b00c2;
-    transform: translateY(3px);
-}
-/* LOG REG CART */
-
 .product-container {
     margin: 0 auto;
     height: 100%;
@@ -150,26 +27,6 @@ button {
     width: 100% !important;
 }
 
-.text-footer {
-    margin-top: 3%;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(173, 173, 173);
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-.footer-links{
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 ul {
     list-style-type: none;
     display: inline-flex;
@@ -177,22 +34,7 @@ ul {
 li {
     margin: 0 15px;
 }
-a {
-    text-decoration: none;
-    color: white;
-}
- /* header usuario logeado */
-.usLog {
-    display: flex;
-    position: relative;
-}
-.usLog img {
-    height: 30px;
-    width: 30px;
-}
-.log-reg-cart {
-    flex-direction: row;
-}
+
 .form {
     display: flex;
     background-color: white;
@@ -203,44 +45,6 @@ a {
 .title {
     align-items: center;
 }
-/* ======= USUARIO HEADER ========= */
-.usLog {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    margin: 0px 10px;
-}
-.usMenu {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    margin: 0px 10px;
-    margin-top: 0px;
-}
-#usLogImg {
-    border-radius: 50%;
-}
-#closeSessionButton {
-    border: none;
-    background-color: #380066;
-    color: white;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    width: 120px;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-}
-#closeSessionButton:hover {
-    background: #45017c;
-    transform: translateY(-1px);
-    box-shadow: 0px 2px 3px -2px;
-}
-#closeSessionButton:active {
-    background: #6b00c2;
-    transform: translateY(3px);
-}
-
 .product img {
     height: 150px;
     width: 250px;
@@ -280,19 +84,5 @@ p {
 @media screen and (max-width: 600px) {
     .product {
         width: 90% !important;
-    }
-    .logo{
-        width: 50%;
-        margin-bottom: 10px;
-    }
-    .search-container{
-        width: 80%;
-        margin-bottom: 10px;
-    }
-    .topnav{
-        height: auto;
-    }
-    .log-reg-cart{
-        margin-bottom: 10px;
     }
 }

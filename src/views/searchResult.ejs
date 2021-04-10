@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/stylesheets/stylex.css" />
         <link rel="stylesheet" href="/css/searchResult.css" />
         <link rel="shortcut icon" href="/images/logo-y-title.png" />
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
         <script src="../scripts/global.js"></script>
       </head>
 <body>
@@ -19,12 +21,11 @@
         <h1 class="title">Estos son los resultados de la búsqueda</h1><br>
         
         <div class="product-container">
-            <!-- <section class="product">  -->
         <% if (listado.length != 0) { %>
             <% for( let i = 0; i < listado.length; i++ ) { %>
                 <div class="product">
                 <a href="/detail/<%= listado[i].id %>" >
-                        <img src="/uploads/products/<%= listado[i].imgpath %>" alt="">
+                        <img class="product-image" src="/uploads/products/<%= listado[i].imgpath %>" alt="">
                         <h2><%= listado[i].name %></h2>
                         <h3>$ <%= new Intl.NumberFormat().format(listado[i].price) %></h3>
                         <p><%= listado[i].description %></p>

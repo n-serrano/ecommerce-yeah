@@ -58,3 +58,8 @@ img {
     flex-direction: column;
     margin: 0 -150px;
 }
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90% !important;
+    }
+}
