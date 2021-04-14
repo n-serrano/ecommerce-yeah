@@ -183,6 +183,7 @@ section.productDetail .controls form > button {
 }
 .imgProduct{
     width: 100% !important;
+    height: 100% !important;
 }
 @media screen and (max-width: 600px) {
     .containerProduct {

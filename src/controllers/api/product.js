@@ -47,17 +47,24 @@ module.exports = {
             })
     },
     totalCategory: function (req, res) {
-        db.Category.findAll()
-
+        db.Category.findAll({ include: "product"})
             .then(function (totalCategories) {
                 if (totalCategories.length > 0) {
+                    let arrayOfCategories = []
+                    for(let i = 0; i < totalCategories.length; i++){
+                        arrayOfCategories.push({
+                            name:totalCategories[i].dataValues.title,
+                            totalProds:totalCategories[i].dataValues.product.length
+                        })
+                    }
                     let apiResponse = {
                         meta: {
                             status: 200,
                             url: "/api/category",
                             total: totalCategories.length
                         },
-                        data: totalCategories
+                        data:arrayOfCategories
+                        
                     }
                     return res.json(apiResponse)
                 } else {
@@ -68,26 +75,25 @@ module.exports = {
                 res.json({ status: 500 })
             })
     },
-    productForCategory: function (req, res) {
-        db.Product.findAll({ include: "category" })
+    
+    lastProduct: function (req, res) {
+        db.Product.findAll({ include: "category", order:[["created_at","DESC"]], limit:1 })
             .then(function (products) {
-                for (let i = 0; i < products.length; i++) {
-                    let relatedProducts = products[i].category
-                }
-
+               products[0].setDataValue("endpoint", "/api/products/last/" + products.length)
                 let apiResponse= {
                     meta: {
                         status: 200,
-                        url: "/api/products/category",
-                        total: relatedProducts.length, 
+                        url: "/api/products/last",
+                        total: products.length, 
                     },
                     data: products
                 }
                 res.json(apiResponse)
         })
-        .catch(function () {
+        .catch(function (error) {
             res.json({ status: 500 })
+            console.log(error)
         })
-},
+    },
 
 }
