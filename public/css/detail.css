@@ -115,21 +115,19 @@ section.productDetail .controls form > button {
 .containerProduct {
     text-align: center;
     height: 100%;
-    width: 90%;
     background-color: white;
     text-align: start;
     border-radius: 15px;
     border:rgb(190, 190, 190) 1px solid;
     box-shadow: gray 1px 1px 5px 3px;
-    display: flex;
-
-
+    margin: 0 auto;
 }
-
 .imgProduct {
-    width: 30%;
-    align-items: center;
-    object-fit: contain;
+    width: 900px;
+}
+.imgProduct img {
+    width: 100%;
+    border-radius: 5px 5px 0px 0px    
 }
 .descriptionProductCard {
     /* border:gray 10px solid; */
@@ -181,12 +179,11 @@ section.productDetail .controls form > button {
 .buttonPurchaseBlue:active {
     background-color: rgb(26, 30, 230);
 }
-.imgProduct{
-    width: 100% !important;
-    height: 100% !important;
-}
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .containerProduct {
-        width: 90% !important;
+        display: block;
+    }
+    .imgProduct {
+        width: 100%;
     }
 }

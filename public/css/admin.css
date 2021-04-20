@@ -72,8 +72,19 @@
     background: #6b00c2;
     transform: translateY(3px);
 }
+
+label {
+    color: black;
+}
+
 @media screen and (max-width: 600px) {
     .container {
+        width: 90% !important;
+    }
+    .form {
+        width: 90% !important;
+    }
+    textarea {
         width: 90% !important;
     }
 }

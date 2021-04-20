@@ -13,14 +13,18 @@
         <link rel="stylesheet" href="/css/header.css"/>
         <link rel="stylesheet" href="/css/footer.css">
         <link rel="shortcut icon" href="/images/logo-y-title.png" />
+        <script src="/scripts/cart.js" async></script>
       </head>
 <body>
     <%- include('partials/header') %> 
     <main>
         <section class="productDetail">
             <div class="containerProduct">
+                <div class="imgProduct">
+                    <img src="/uploads/products/<%= product.imgpath %>" >
+                </div>
+                <div>
                 <ul>
-                    <li class="imgProduct"><img style="width: 100%;" src="/uploads/products/<%= product.imgpath %>" ></li>
                     <li class="descriptionProductCard">
                         <ul style="flex-direction: column;">
                             <li><h1 id="nameProduct"><%= product.name %></h1></li>
@@ -31,12 +35,13 @@
                             <li><h3 class="titleLabel">Stock:</h3></li>
                             <li><h3 id="stockProduct"><%= product.stock %></h3></li>
                             <ul>
-                            <li><button class="buttonPurchase">Comprar</button></li>
+                            <li><button  id="buttonPurchase" class="buttonPurchase">Añadir al carrito</button></li>
                             <li><button class="buttonPurchaseBlue">Contactar</button></li>
                             </ul>
                         </ul>
                     </li>
                 </ul>
+                </div>
             </div>
 
             <div class="controls">
