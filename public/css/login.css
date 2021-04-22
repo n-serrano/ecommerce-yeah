@@ -29,9 +29,9 @@ h1 {
 .container {
     top: 100px;
     position: relative;
-    height: 500px;
+    height: 100%;
     width: 600px;
-    margin: 0 auto;
+    margin: auto;
     background: white;
     border-radius: 4px;
     box-shadow: 0px 2px 10px 0px grey;
@@ -48,6 +48,7 @@ h1 {
     padding: 10px 15px;
     border-radius: 4px;
     outline: none;
+    margin-bottom: 70px;
 }
 
 .button-enviar:hover {
@@ -81,8 +82,36 @@ h1 {
 .checkbox {
 margin-right: 3px;
 }
+.errors {
+    color: red;
+    background-color: rgb(229, 149, 165);
+    text-align: start;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 5px;
+    list-style: none;
+}
+.errors ul {
+    padding: 5px;
+    align-content: center;
+    text-align: center;
+    
+}
+.errors li {
+    margin-bottom: 10px ;
+    border-bottom: 10px solid  rgb(229, 149, 165);
+    border-left: 10px solid  rgb(229, 149, 165);
+    border-radius: 5px;
+}
 @media screen and (max-width: 600px) {
     .container {
         width: 90% !important;
     }
+    input {
+        width: 90% !important;
+    }
+    .errors {
+        width: 90% !important;
+    }
 }
+

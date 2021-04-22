@@ -32,7 +32,7 @@ module.exports = {
                 username: req.body.username,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 12),
-                avatar: req.files.length > 0 ? req.files[0].filename : ""
+                avatar: req.files.length > 0 ? req.files[0].filename : "default.png"
             })
             .then(function (){
                 res.redirect('/')

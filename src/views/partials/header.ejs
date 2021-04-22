@@ -29,11 +29,7 @@
             <% } %>
         <div class="usLog">
           <a id="usLogName" href="/users/perfil/<%= usuarioLogeado.id %>" ><%= usuarioLogeado.username %>
-            <% if( usuarioLogeado.avatar == "") { %>
-              <img class="usLog" id="usLogImg" src="/uploads/avatars/default.png">
-              <% } else  { %>
             <img class="usLog" id="usLogImg" src="/uploads/avatars/<%= usuarioLogeado.avatar %>"">
-            <% } %>
           </a>
           
             <div class="usMenu">

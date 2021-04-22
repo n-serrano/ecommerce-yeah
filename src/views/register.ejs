@@ -11,31 +11,20 @@
     <link rel="stylesheet" href="/stylesheets/stylex.css" />
     <link rel="stylesheet" href="/css/register.css" />
     <link rel="shortcut icon" href="/images/logo-y-title.png" />
+    <script src="/scripts/registerValidation.js"></script>
     </head>
     <body>
       <a href="/"><button class="backArrow" ><img src="/images/arrow-left-solid.svg" alt=""></button></a>
       <div class="container">
         <h1 class="cuenta">Creá tu cuenta</h1>
-
-        <div class="errors">
-          <ul>   
-          </ul>
-        </div>
-
         <form action=""  id="register" method="post"  class="form" enctype="multipart/form-data">
           <div class="form-group">
             <label for="exampleInputUsername">Ingresa tu nombre de usuario</label>
             <input type="text" name="username" class="form-control" id="exampleImputUsername"><br>
-            <small style="color: red">
-              <%= (typeof errors != 'undefined' && errors.username) ? errors.username.msg : '' %>
-            </small>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Ingresá tu correo electrónico</label><br>
             <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><br>
-            <small style="color: red">
-              <%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %>
-            </small>
           </div>
           <div class="form-group">
             <label for="exampleFormControlFile1">Subí tu avatar</label><br>
@@ -44,13 +33,12 @@
           <div class="form-group">
             <label for="exampleInputPassword1">Ingresá tu contraseña</label><br>
             <input type="password" name="password" class="form-control" id="exampleInputPassword1"><br>
-            <small style="color: red">
-              <%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %>
-            </small>
+          </div>
+          <div class="errors">
+            
           </div><br>
-          <button type="submit" class="button-enviar">Confirmar</button>
+          <button type="submit" onclick="displayErrors()" class="button-enviar">Confirmar</button>
       </form>
     </div>
-   <script src="../../public/scripts/registerValidation.js"></script>
   </body>
 </html>

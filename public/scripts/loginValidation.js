@@ -1,29 +1,32 @@
-window.addEventListener("load",(e)=>{
-    let login = document.getElementById("login")
-    console.log(login)
-    login.addEventListener("submit", function(e){
-        let errores = [];
-
-        let inputEmail = document.getElementById("exampleInputEmail1");
-        console.log(inputEmail)
-        let inputPassword = document.getElementById("exampleInputPassword1")
-        
-        if(inputEmail.value == ""){
-            errores.push("Debes ingresar tu e-mail")
-        } 
-
-        if(inputPassword.value == ""){
-            errores.push("Debes ingresar tu contraseña")
-        }
-        
-
-        if(errores.length > 0){
-            e.preventDefault();
-        }
+function displayErrors () {
+        let login = document.querySelector("form#login")
+        login.addEventListener("submit", function(e){
+            let small = document.querySelector("div.errors");
+            let errors = [];
+            small.innerHTML = ""
     
-        let small = document.querySelector("div.errores");
-        for (let i = 0; i  < errores.length; i++) {
-            small.innerHTML += "<li>" + errores[i] + "</li>"
-        }
-    })
-});
+            let inputEmail = document.getElementById("exampleInputEmail1");
+            let inputPassword = document.getElementById("exampleInputPassword1")
+            
+            if(inputEmail.value == ""){
+                errors.push("Debes ingresar tu e-mail")
+            } 
+    
+            if(inputPassword.value == ""){
+                errors.push("Debes ingresar tu contraseña")
+            }
+            
+    
+            if(errors.length > 0){
+                e.preventDefault();
+            }
+        
+            
+            small.innerHTML += `<ul>`
+            small.innerHTML += `<li style="font-weight: bold;" > Hemos encontrado estos errores: </li>`
+            for (let i = 0; i  < errors.length; i++) {
+                small.innerHTML += `<li> -${errors[i]} </li>`
+            }
+            small.innerHTML += `</ul>`
+        }) 
+}
