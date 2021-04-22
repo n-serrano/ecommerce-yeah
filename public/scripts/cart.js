@@ -20,6 +20,6 @@ window.addEventListener("load",(e)=>{
         localStorage.setItem('cart',JSON.stringify(cart))
         console.log(cart)
     }    
-    alert(productName + ' agregado al carrito')
+    setTimeout(() => Swal.fire(productName + '¡Se agregó al carrito correctamente!'),2000)
     })
     });
