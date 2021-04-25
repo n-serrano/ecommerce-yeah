@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 const multerRegister = require('../middlewares/multerRegister');
 const registerValidation = require('../validations/registerValidation');
 const userController = require('../controllers/user')
@@ -16,9 +15,9 @@ router.get('/users/login', userController.login);
 
 router.post('/users/login',loginValidation, userController.checkUser);
 
-router.get('/:id', userController.logout);
-
 router.get('/users/perfil/:id', userController.perfil);
+
+router.get('/:id', userController.logout);
 
 // router.get('/edit/:id', userController.edit)
 

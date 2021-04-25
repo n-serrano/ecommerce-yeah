@@ -12,7 +12,7 @@ function displayErrors (){
         
             if(inputName.value == ""){
             errors.push("El campo nombre se encuentra vacío");
-            } else if(inputName.value.length < 2){
+            } else if(inputName.value.length < 4){
             errors.push("El campo nombre debe contener al menos 2 caracteres");
             }
 
@@ -23,8 +23,8 @@ function displayErrors (){
 
             if(inputPassword.value == ""){
                 errors.push("El campo password se encuentra vacío");
-            } else if(inputName.value.length < 8){
-                errors.push("La contraseña debe contener al menos 8 caracteres");
+            } else if(inputPassword.value.length <= 6){
+                errors.push("La contraseña debe contener al menos 6 caracteres");
             }
 
 
@@ -38,23 +38,16 @@ function displayErrors (){
             {
                 errors.push("El campo de email no es válido");
             }
-
-            let imagen = document.getElementById("exampleFormControlFile1");
-
-            if (!(/\.(jpg|png|jpeg|gif)$/i).test(imagen.value)) {
-            errors.push("El archivo a adjuntar no es una imagen válida");
-            }
-
+            
             if(errors.length > 0){
                 e.preventDefault();
+                small.innerHTML += `<ul>`
+                    small.innerHTML += `<li style="font-weight: bold;" > Hemos encontrado estos errores: </li>`
+                for (let i = 0; i  < errors.length; i++) {
+                    small.innerHTML += `<li> -${errors[i]} </li>`
+                }
+                small.innerHTML += `</ul>`
             }
-
-            small.innerHTML += `<ul>`
-            small.innerHTML += `<li style="font-weight: bold;" > Hemos encontrado estos errores: </li>`
-            for (let i = 0; i  < errors.length; i++) {
-                small.innerHTML += `<li> -${errors[i]} </li>`
-            }
-            small.innerHTML += `</ul>`
-            })
+        })
 }
         

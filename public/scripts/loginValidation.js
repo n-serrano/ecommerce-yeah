@@ -19,14 +19,14 @@ function displayErrors () {
     
             if(errors.length > 0){
                 e.preventDefault();
+                small.innerHTML += `<ul>`
+                small.innerHTML += `<li style="font-weight: bold;" > Hemos encontrado estos errores: </li>`
+                for (let i = 0; i  < errors.length; i++) {
+                    small.innerHTML += `<li> -${errors[i]} </li>`
+                }
+                small.innerHTML += `</ul>`
             }
         
             
-            small.innerHTML += `<ul>`
-            small.innerHTML += `<li style="font-weight: bold;" > Hemos encontrado estos errores: </li>`
-            for (let i = 0; i  < errors.length; i++) {
-                small.innerHTML += `<li> -${errors[i]} </li>`
-            }
-            small.innerHTML += `</ul>`
         }) 
 }

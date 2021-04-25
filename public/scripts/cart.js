@@ -5,8 +5,8 @@ window.addEventListener("load",(e)=>{
     let productName = document.getElementById('nameProduct').innerText
     let productDescription = document.getElementById('descriptionProduct').innerText
     let productPrice = document.getElementById('priceProduct').innerText
-    let productAmount = document.getElementById('stockProduct').innerText
-    console.log(productAmount)
+    let productAmount= 1
+
 
     let productInfo = {
         productName,
@@ -16,10 +16,20 @@ window.addEventListener("load",(e)=>{
     }
     let cart = JSON.parse(window.localStorage.getItem("cart"))
     if(cart){
-        cart.push(productInfo)  
+        let productInCart =cart.find(function (producto){
+            return producto.productName == productInfo.productName
+        })
+        if(productInCart){
+            productInCart.productAmount ++
+            localStorage.setItem('cart',JSON.stringify(cart))
+        }else {
+            productInfo.productAmount = 1
+            cart.push(productInfo)  
         localStorage.setItem('cart',JSON.stringify(cart))
+        }
     } else {
         let cart = []
+        productInfo.productAmount = 1
         cart.push(productInfo)  
         localStorage.setItem('cart',JSON.stringify(cart))
     }
