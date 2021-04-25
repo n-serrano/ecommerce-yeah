@@ -1,18 +1,18 @@
 function closeSession(id) {
   let res = Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+    title: 'Estas seguro que quieres cerrar sesión',
+    text: "¡Deberas volver a logearte para acceder a las acciones de la web!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes'
+    confirmButtonText: 'Si'
     
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire(
-        'Session closed!',
-        'Your session has been closed.',
+        'Sesión cerrada!',
+        'Tu sesión se ha cerrado correctamente.',
         'success'
       )
       setTimeout(() => window.location = "/:" + id,2000)

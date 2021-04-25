@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="/css/footer.css">
         <link rel="shortcut icon" href="/images/logo-y-title.png" />
         <script src="/scripts/cart.js" async></script>
+        <script src="/scripts/global.js"></script>
       </head>
 <body>
     <%- include('partials/header') %> 
@@ -35,8 +36,13 @@
                             <li><h3 class="titleLabel">Stock:</h3></li>
                             <li><h3 id="stockProduct"><%= product.stock %></h3></li>
                             <ul>
+                                <% if(typeof usuarioLogeado == "undefined") { %>
+                                    <% } else  { %>
+                                <% if (typeof usuarioLogeado != "undefined") { %>
                             <li><button  id="buttonPurchase" class="buttonPurchase">Añadir al carrito</button></li>
-                            <li><button class="buttonPurchaseBlue">Contactar</button></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=5491140495994" target="_blank"><button class="buttonPurchaseBlue">Contactar</button></a></li>
+                              <% } %>
+                            <% } %>
                             </ul>
                         </ul>
                     </li>

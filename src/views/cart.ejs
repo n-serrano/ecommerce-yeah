@@ -13,29 +13,28 @@
     <link rel="stylesheet" href="/css/footer.css"/>
     <link rel="stylesheet" href="/css/cart.css"/>
     <link rel="shortcut icon" href="/images/logo-y-title.png" />
-    <script src="/scripts/showInCart.js" async></script>
+    <script src="/scripts/cartActions.js" async></script>
+    <script src="/scripts/global.js"></script>
+    
   </head>
 <body>
   <%- include('partials/header') %> 
-  <section class="container content-section">
-    <h2 class="section-header">CART</h2>
-    <div class="cart-row">
-        <span class="cart-item cart-header cart-column">ITEM</span>
-        <span class="cart-price cart-header cart-column">PRICE</span>
-        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-    </div>
-    <div class="cart-items">
-    </div>
-    <div class="cart-total">
-        <strong class="cart-total-title">Total</strong>
-        <span class="cart-total-price">$0</span>
-    </div>
-    <div class="productsInCart" >
-      <ul id="productsInCart">
-
-      </ul>
-    </div>
-    <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-</section>
+  <h2>CARRITO DE COMPRAS</h2>
+<div> 
+<table id="showProducts" class="products">
+  <tr>
+    <th>Nombre del producto</th>
+    <th>Descripción</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+  </tr>
+</table>
+<p class="cartEmpty" style="text-align: center;"></p>
+<ul>
+  <button class="btn-purchase" onclick="message()">Comprar</button>
+  <button class="buttonEmptyCart" onclick="deleteAll()">Vaciar carrito</button>
+  <button class="buttonContinueShopping"><a href="/">Seguir Comprando</a></button>
+</div>
   <%- include('partials/footer') %> 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

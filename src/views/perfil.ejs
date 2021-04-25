@@ -13,18 +13,17 @@
         <link rel="stylesheet" href="/css/footer.css"/>
         <link rel="stylesheet" href="/css/header.css"/>
         <link rel="shortcut icon" href="/images/logo-y-title.png" />
-        <script src="../scripts/global.js"></script>
+        <script src="/scripts/global.js"></script>
       </head>
   <body>
-
     <%- include('./partials/header') %>
 
     <h1 id="titleProfile">Este es tu perfil😎 (Carita re fachera)</h1><br><br><br>
 
     <div class="prof-container">
       <ul id="ulBullets">
-          <% if(usuarioLogeado.avatar == '') { %>
-          <li><img src="/uploads/avatars/default.png" alt=""></li><br>
+          <% if(usuarioLogeado.avatar == 'default.png') { %>
+          <li><img src="/uploads/avatars/<%= usuarioLogeado.avatar %>" alt=""></li><br>
           <% } else  { %>
           <li><img src="/uploads/avatars/<%= usuarioLogeado.avatar %>" alt=""></li><br>
           <% } %>

@@ -1,6 +1,9 @@
 const db = require("../../database/models/Index")
 
 module.exports = {
+    explain: function(req, res) {
+        res.render('explain')
+    },
     detail: function(req, res) {
         db.Product.findByPk(req.params.id)
         .then(function(product) {
