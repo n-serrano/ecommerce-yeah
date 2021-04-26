@@ -35,15 +35,24 @@
                             <li><h3 id="descriptionProduct"> <%= product.description %></h3></li>
                             <li><h3 class="titleLabel">Stock:</h3></li>
                             <li><h3 id="stockProduct"><%= product.stock %></h3></li>
-                            <ul>
+                                <ul>
+                                    <% if(typeof usuarioLogeado == "undefined") { %>
+                                        <% } else  { %>
+                                    <% if (typeof usuarioLogeado != "undefined") { %>
+                                <li><button  id="buttonPurchase" class="buttonPurchase">Añadir al carrito</button></li>
+                                <li><a href="https://api.whatsapp.com/send?phone=5491140495994" target="_blank"><button class="buttonPurchaseBlue">Contactar</button></a></li>
                                 <% if(typeof usuarioLogeado == "undefined") { %>
                                     <% } else  { %>
-                                <% if (typeof usuarioLogeado != "undefined") { %>
-                            <li><button  id="buttonPurchase" class="buttonPurchase">Añadir al carrito</button></li>
-                            <li><a href="https://api.whatsapp.com/send?phone=5491140495994" target="_blank"><button class="buttonPurchaseBlue">Contactar</button></a></li>
-                              <% } %>
-                            <% } %>
-                            </ul>
+                                <% if (usuarioLogeado.admin == 1) { %>
+                                <li><a  style="cursor:pointer" href="/edit/<%= product.id %>"><button class="editButton" >Editar</button></a></li>
+                                <form action="/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                    <li><button  class="deleteButton" type="submit">Borrar</button></li>
+                                    <% } %>
+                                <% } %>
+                                </form>
+                                  <% } %>
+                                <% } %>
+                                </ul>
                         </ul>
                     </li>
                 </ul>
@@ -51,19 +60,11 @@
             </div>
 
             <div class="controls">
-                <% if(typeof usuarioLogeado == "undefined") { %>
-                    <% } else  { %>
-                <% if (usuarioLogeado.admin == 1) { %>
-                <a style="cursor:pointer" href="/edit/<%= product.id %>"><button>Editar</button></a>
-                <form action="/delete/<%= product.id %>?_method=DELETE" method="POST">
-                    <button type="submit">Borrar</button>
-                    <% } %>
-                <% } %>
-                </form>
+                
             </div>
         </section>
     </main>
-    <%- include('partials/footer') %> 
 </body>
+<%- include('partials/footer') %> 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </html>

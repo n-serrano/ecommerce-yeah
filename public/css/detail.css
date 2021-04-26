@@ -179,6 +179,38 @@ section.productDetail .controls form > button {
 .buttonPurchaseBlue:active {
     background-color: rgb(26, 30, 230);
 }
+.deleteButton {
+    padding: 10px;
+    outline: none;
+    background-color: rgb(128, 0, 0);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    transition: ease-in-out 0.3ms;
+}
+.deleteButton:hover {
+    background-color: rgb(163, 19, 19);
+}
+.deleteButton:active {
+    background-color: rgb(230, 26, 26);
+}
+.editButton {
+    padding: 10px;
+    outline: none;
+    background-color: rgb(128, 79, 0);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    transition: ease-in-out 0.3ms;
+}
+.editButton:hover {
+    background-color: rgb(163, 96, 19);
+}
+.editButton:active {
+    background-color: rgb(230, 142, 26);
+}
 @media screen and (max-width: 900px) {
     .containerProduct {
         display: block;
