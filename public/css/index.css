@@ -27,20 +27,13 @@
     width: 100% !important;
 }
 
-ul {
-    list-style-type: none;
-    display: inline-flex;
-}
-li {
-    margin: 0 15px;
-}
-
 .form {
     display: flex;
     background-color: white;
     height: 600px;
     align-items: center;
     justify-content: center;
+
 }
 .title {
     align-items: center;

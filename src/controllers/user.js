@@ -47,7 +47,6 @@ module.exports = {
     },
     checkUser: function (req, res) {
         let errors = validationResult(req);
-        console.log(errors)
         if (errors.isEmpty()) {
         db.User.findOne({
             where: {

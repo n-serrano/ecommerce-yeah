@@ -95,11 +95,14 @@ input {
 .alertMessage {
     color: black;
 }
+.footer {
+    margin-top:calc(5% + 177px);
+}
 @media screen and (max-width: 600px) {
     .container {
         width: 90% !important;
     }
-    table {
+    .showProducts {
         width: 90% !important;
     }
 }

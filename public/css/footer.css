@@ -9,7 +9,13 @@
     padding: 15px;
     text-align: center;
 }
-
+ul {
+    list-style-type: none;
+    
+}
+li {
+    margin: 0px 15px;
+}
 .footer-links{
     display: flex;
     position: relative;
